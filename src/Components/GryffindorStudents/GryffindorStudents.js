@@ -1,17 +1,18 @@
 import React, {Component} from 'react'
 
-export default class HousePage extends Component{
+export default class GryffindorStudents extends Component{
     constructor(props){
         super(props)
         this.state = {
-            points: 0
+            students: [],
+            quidditch: []
         }
     }
 
     render(){
         return(
             <div>
-                House Page
+                Gryffindor Students
             </div>
         )
     }

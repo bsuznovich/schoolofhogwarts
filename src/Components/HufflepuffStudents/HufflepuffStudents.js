@@ -1,20 +1,18 @@
 import React, {Component} from 'react'
 
-export default class Homepage extends Component{
+export default class HufflepuffStudents extends Component{
     constructor(props){
         super(props)
         this.state = {
-            email: '',
-            password:'',
-            firstName: '',
-            lastName: ''
+            students: [],
+            quidditch: []
         }
     }
 
     render(){
         return(
             <div>
-                Homepage
+                Hufflepuff Students
             </div>
         )
     }

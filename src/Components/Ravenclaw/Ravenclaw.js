@@ -1,18 +1,17 @@
 import React, {Component} from 'react'
 
-export default class Students extends Component{
+export default class Ravenclaw extends Component{
     constructor(props){
         super(props)
         this.state = {
-            students: [],
-            quidditch: []
+            points: 0
         }
     }
 
     render(){
         return(
             <div>
-                Students
+                Ravenclaw
             </div>
         )
     }

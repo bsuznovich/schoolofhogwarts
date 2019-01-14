@@ -1,20 +1,17 @@
 import React, {Component} from 'react'
 
-export default class Homepage extends Component{
+export default class Gryffindor extends Component{
     constructor(props){
         super(props)
         this.state = {
-            email: '',
-            password:'',
-            firstName: '',
-            lastName: ''
+            points: 0
         }
     }
 
     render(){
         return(
             <div>
-                Homepage
+                Gryffindor
             </div>
         )
     }
