@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Nav from '../Nav/Nav'
 
 export default class Gryffindor extends Component{
     constructor(props){
@@ -11,6 +12,7 @@ export default class Gryffindor extends Component{
     render(){
         return(
             <div>
+                <Nav />
                 Gryffindor
             </div>
         )
