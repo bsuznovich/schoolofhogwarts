@@ -21,13 +21,13 @@ export default (
         <Route exact path='/' component={Homepage} />
         <Route path='/enroll' component={Enroll} />
         <Route path='/signin' component={SignIn} />
-        <Route path='/gryffindor' component={Gryffindor} />
+        <Route exact path='/gryffindor' component={Gryffindor} />
         <Route path='/gryffindor/students' component={GryffindorStudents} />
-        <Route path='/slytherin' component={Slytherin} />
+        <Route exact path='/slytherin' component={Slytherin} />
         <Route path='/slytherin/students' component={SlytherinStudents} />
-        <Route path='/hufflepuff' component={Hufflepuff} />
+        <Route exact path='/hufflepuff' component={Hufflepuff} />
         <Route path='/hufflepuff/students' component={HufflepuffStudents} />
-        <Route path='/ravenclaw' component={Ravenclaw} />
+        <Route exact path='/ravenclaw' component={Ravenclaw} />
         <Route path='/ravenclaw/students' component={RavenclawStudents} />
         <Route path='/houses' component={Houses} />
         <Route path='/myprofile' component={MyProfile} />

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 export default class MyHouse extends Component{
     constructor(props){
@@ -11,6 +12,12 @@ export default class MyHouse extends Component{
     render(){
         return(
             <div>
+                <Link to='/'>Sign Out</Link>
+                <br/>
+                <Link to='/welcome'> Home </Link>
+                Students
+                <Link to='/myprofile'> My Profile </Link>
+                <br/>
                 My House
             </div>
         )

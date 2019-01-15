@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 export default class RavenclawStudents extends Component{
     constructor(props){
@@ -12,6 +13,12 @@ export default class RavenclawStudents extends Component{
     render(){
         return(
             <div>
+                <Link to='/'>Sign Out</Link>
+                <br/>
+                <Link to='/welcome'> Home </Link>
+                <Link to='/myhouse/:houseid'> My House </Link>
+                <Link to='/myprofile'> My Profile </Link>
+                <br/>
                 Ravenclaw Students
             </div>
         )

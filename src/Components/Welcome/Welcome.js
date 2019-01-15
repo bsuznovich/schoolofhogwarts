@@ -11,6 +11,7 @@ export default class HousePage extends Component{
                 <Link to='/houses'> Houses </Link>
                 <Link to='/myhouse/:houseid'> My House </Link>
                 <Link to='/myprofile'> My Profile </Link>
+                <br/>
                 Welcome
             </div>
         )
