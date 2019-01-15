@@ -7,24 +7,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <Nav /> */}
-        <Link to='/signin' >Sign In</Link>
-        <Link to='/enroll' >Enroll</Link>
-        {/* <SignIn /> */}
-        {/* <Enroll /> */}
-        {/* <Homepage /> */}
-        {/* <Welcome />
-        <Houses />
-        <MyHouse />
-        <MyProfile />
-        <Gryffindor />
-        <GryffindorStudents />
-        <Hufflepuff />
-        <HufflepuffStudents />
-        <Ravenclaw />
-        <RavenclawStudnets />
-        <Slytherin />
-        <SlytherinStudents /> */}
         {routes}
       </div>
     );

@@ -14,6 +14,7 @@ import Slytherin from './Components/Slytherin/Slytherin'
 import SlytherinStudents from './Components/SlytherinStudents/SlytherinStudents'
 import Enroll from './Components/Enroll/Enroll'
 import SignIn from './Components/SignIn/SignIn'
+import MyHouse from './Components/MyHouse/MyHouse'
 
 export default (
     <Switch>
@@ -31,5 +32,6 @@ export default (
         <Route path='/houses' component={Houses} />
         <Route path='/myprofile' component={MyProfile} />
         <Route path='/welcome' component={Welcome} />
+        <Route path='/myhouse/:houseid' component={MyHouse} />
     </Switch>
 )

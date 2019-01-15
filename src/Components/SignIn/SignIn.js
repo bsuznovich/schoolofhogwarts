@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 export default class SignIn extends Component{
     constructor(props){
@@ -12,6 +13,9 @@ export default class SignIn extends Component{
     render(){
         return(
             <div>
+                <Link to='/welcome'> Confirm </Link>
+                <Link to='/'> Cancel </Link>
+                <br/>
                 Sign In
             </div>
         )

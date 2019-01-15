@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 export default class Enroll extends Component{
     constructor(props){
@@ -15,7 +16,10 @@ export default class Enroll extends Component{
         return(
             <div>
                 <p>
-                Enroll
+                    <Link to='/welcome'> Enroll </Link>
+                    <Link to='/'> Cancel </Link>
+                    <br/>
+                    Enroll
                 </p>
             </div>
         )

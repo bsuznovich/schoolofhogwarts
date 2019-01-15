@@ -1,7 +1,7 @@
 require('dotenv').config()
 const massive = require('massive')
 const express = require('express')
-// const controller = require('./controller')
+const controller = require('./controller')
 
 const {SERVER_PORT, CONNECTION_STRING} = process.env
 
@@ -15,3 +15,5 @@ massive(CONNECTION_STRING).then((db) => {
         console.log(`Revelio on port ${SERVER_PORT}`)
     })
 })
+
+app.get(`/api/students/:houseid`, controller.getStudents)
