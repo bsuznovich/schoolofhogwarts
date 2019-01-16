@@ -15,6 +15,7 @@ export default class Gryffindor extends Component{
                 <Link to='/'>Sign Out</Link>
                 <br/>
                 <Link to='/welcome'> Home </Link>
+                <Link to='/houses'> Houses </Link>
                 <Link to='/myhouse/:houseid'> My House </Link>
                 <Link to='/myprofile'> My Profile </Link>
                 <br/>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-import Student from '../Students/Students'
+import Students from '../Students/Students'
 
 export default class GryffindorStudents extends Component{
     constructor(props){
@@ -29,13 +29,14 @@ export default class GryffindorStudents extends Component{
         let studentList = this.state.students.map(student => {
             return(
                 <div>
-                    <Student key={student.id}
+                    <Students key={student.id}
                     id={student.id}
                     firstname={student.firstname}
                     lastname={student.lastname}
                     year={student.year}
                     houseid={student.houseid}
                     points={student.points}
+                    picture={student.picture}
                     getStudents={() => this.getStudents(student.houseid)}/>
                 </div>
             )
@@ -45,6 +46,7 @@ export default class GryffindorStudents extends Component{
                 <Link to='/'>Sign Out</Link>
                 <br/>
                 <Link to='/welcome'> Home </Link>
+                <Link to='/houses'> Houses </Link>
                 <Link to='/myhouse/:houseid'> My House </Link>
                 <Link to='/myprofile'> My Profile </Link>
                 <br/>
