@@ -3,7 +3,7 @@ CREATE TABLE student
 id serial PRIMARY KEY,
 firstname VARCHAR(150) NOT NULL,                        
 lastname VARCHAR(150) NOT NULL,
-year VARCHAR(1) NOT NULL,
+year VARCHAR(1),
 houseid INTEGER NOT NULL references house(id),
 points VARCHAR(3) NOT NULL,
 picture TEXT,

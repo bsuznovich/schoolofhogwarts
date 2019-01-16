@@ -1,17 +1,13 @@
 const initialState = {
-    email: '',
-    id:''
+    user: {}
 }
 
 const GET_USER_DATA = 'GET_USER_DATA'
 
-export function getUserData(id,email){
+export function getUserData(userInfo){
     return{
         type: GET_USER_DATA,
-        payload: {
-            id: id,
-            email: email
-        }
+        payload: userInfo
     }
 }
 
