@@ -24,7 +24,7 @@ export default class Enroll extends Component{
         return(
             <div>
                 <p>Enroll</p>
-                <div>
+                <form method='POST' action='send'>
                     <span>Email: </span>
                     <input onChange={(e) => this.setState({email: e.target.value})} />
                     <span>Password: </span>
@@ -33,9 +33,9 @@ export default class Enroll extends Component{
                     <input onChange={(e) => this.setState({firstName: e.target.value})} />
                     <span>Last Name: </span>
                     <input onChange={(e) => this.setState({lastName: e.target.value})} />
-                </div>
+                </form>
                 <p>
-                    <button onClick={() => this.enroll()}>Enroll</button>
+                    <button type='submit' onClick={() => this.enroll()}>Enroll</button>
                     <button onClick={() => this.props.history.push('/')}>Cancel</button>
                 </p>
             </div>

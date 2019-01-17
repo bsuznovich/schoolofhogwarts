@@ -1,5 +1,8 @@
+require('dotenv').config()
 const bcrypt = require('bcryptjs')
 const nodemailer = require('nodemailer')
+
+const {EMAIL, PASS} = process.env
 
 module.exports = {
     getStudents: (req,res) => {
@@ -16,7 +19,7 @@ module.exports = {
         // console.log(req.body)
         const studentArr = await db.find_student({email: email})
         if(studentArr.length !== 0){
-            res.status(200).send({message: 'Email already in use'})
+            res.status(400).send({message: 'Email already in use'})
         }
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
@@ -24,40 +27,134 @@ module.exports = {
         req.session.user = {id: newStudentArr[0].id, email: newStudentArr[0].email}
         res.status(200).send({message: 'Signed in', userData: {...req.session.user}, signedIn: true})
 
-        // nodemailer.createTestAccount((err, account) => {
-        //     const htmlEmail = `
-        //     <h3>contact details</h3>
-        //     <ul>
-        //         <li>First Name: ${req.body.firstname} ${req.body.lastname}</li>
-        //         <li>Email: ${req.body.email}</li>
-        //     </ul>
-        //     <h3>Message</h3>
-        //     <p>yeet</p>
-        //     `
-        //     let transporter = nodemailer.createTransport({
-        //         host: 'smtp.ether.email',
-        //         port: 587,
-        //         auth: {
-        //             user: `gfg3hinp7n2ndqzu@ethereal.email`,
-        //             pass: `NB1rvhcK8vrKf7YPjv`
-        //         }
-        //     })
-        //     let mailOptions = {
-        //         from: `adumbledore@hogwarts.edu`,
-        //         to: `gfg3hinp7n2ndqzu@ethereal.email`,
-        //         replyTo: `adumbledore@hogwarts.edu`,
-        //         subject: `Admission`,
-        //         text: 'yeet',
-        //         html: htmlEmail
-        //     }
-        //     transporter.sendMail(mailOptions, (err, info) =>{
-        //         if (err){
-        //             console.log(err)
-        //         }
-        //         console.log(`message sent %s`, info.message)
-        //         console.log(`message URL %s`, nodemailer.getTestMessageUrl(info))
-        //     })
-        // })
+        console.log(req.body)
+
+        
+        
+        nodemailer.createTestAccount((err, account) => {
+            console.log(PASS)
+            const htmlEmail = `
+            <h1>HOGWARTS SCHOOL of WITCHCRAFT and WIZARDRY</h1>
+            
+            <h3>Headmaster: Albus Dumbledore</h3>
+            <p>(Order of Merlin, First Class, Grand Sorc., Chf. Warlock,
+            Supreme Mugwump, International Confed. of Wizards)</p>
+            
+            <p>Dear ${req.body.firstname} ${req.body.lastname},</p>
+            <p>We are pleased to inform you that you have been accepted at Hogwarts School of Witchcraft and Wizardry. Please find enclosed a list of all necessary books and equipment.
+            Term begins on 1 September. We await your owl by no later than 31 July.</p>
+            <p>Yours sincerely,</p>
+            
+            <p>Minerva McGonagall</p>
+            <p>Deputy Headmistress</p>
+
+
+
+
+
+
+
+
+            <h3>UNIFORM</h3>
+
+            <p>First-year students will require:</p>
+            <ol>
+                <li>Three sets of plain work robes (black)</li>
+                <li>One plain pointed hat (black) for day wear</li>
+                <li>One pair of protective gloves (dragon hide or similar)</li>
+                <li>One winter cloak (black, with silver fastenings)</li>
+            </ol>
+
+            <p>Please note that all pupil's clothes should carry name tags.</p>
+
+
+            <h3>COURSE BOOKS</h3>
+
+            <p>All students should have a copy of each of the following:</p>
+
+            <ul>
+                <li>The Standard Book of Spells (Grade 1)</li>
+                    <p>by Miranda Goshawk</p>
+                <li>A History of Magic</li>
+                    <p>by Bathilda Bagshot</p>
+                <li>Magical Theory</li>
+                    <p>by Adalbert Waffling</p>
+                <li>A Beginner's Guide to Transfiguration</li>
+                    <p>by Emeric Switch</p>
+                <li>One Thousand Magical Herbs and Fungi</li>
+                    <p>by Phyllida Spore</p>
+                <li>Magical Drafts and Potions</li>
+                    <p>by Arsenius Jigger</p>
+                <li>Fantastic Beasts and Where to Find Them</li>
+                    <p>by Newt Scamander</p>
+                <li>The Dark Forces: A Guide to Self-Protection</li>
+                    <p>by Quentin Trimble</p>
+            </ul>
+
+
+            <h3>OTHER EQUIPMENT</h3>
+
+            <ul> 
+                <li>1 wand</li>
+                <li>1 cauldron (pewter, standard size 2)</li>
+                <li>1 set glass or crystal phials</li>
+                <li>1 telescope</li>
+                <li>1 set brass scales</li>
+            </ul>
+
+            
+            <p>Students may also bring, if they desire, an owl OR a cat OR a toad.</p>
+
+            <h3>PARENTS ARE REMINDED THAT FIRST YEARS</h3>
+            
+            <h3>ARE NOT ALLOWED THEIR OWN BROOMSTICK</h3>
+            
+            
+            <p>Yours sincerely,</p>
+            
+            <p>Lucinda Thomsonicle-Pocus</p>
+            <p>Chief Attendant of Witchcraft Provisions</p>
+            `
+            let transporter = nodemailer.createTransport({
+                host: 'smtp-mail.outlook.com',
+                port: 587,
+                secure: false,
+                auth: {
+                    user: EMAIL,
+                    pass: PASS
+                }
+            })
+
+            // const transporter = nodemailer.createTransport({
+            //     host: "smtp-mail.outlook.com", // hostname
+            //     secureConnection: false, // TLS requires secureConnection to be false
+            //     port: 587, // port for secure SMTP
+            //     tls: {
+            //        ciphers:'SSLv3'
+            //     },
+            //     auth: {
+            //         user: EMAIL,
+            //         pass: PASS
+            //     }
+            //  });
+            let mailOptions = {
+                from: EMAIL,
+                to: req.body.email,
+                replyTo: EMAIL,
+                subject: `Admission`,
+                text: 'yeet',
+                html: htmlEmail
+            }
+            transporter.sendMail(mailOptions, (err, info) =>{
+                if (err){
+                    console.log(err)
+                } else {
+                    res.status(200).send('yay')
+                }
+                // console.log(`message sent %s`, info.message)
+                // console.log(`message URL %s`, nodemailer.getTestMessageUrl(info))
+            })
+        })
     },
 // NB1rvhcK8vrKf7YPjv	gfg3hinp7n2ndqzu@ethereal.email
     signIn: async (req,res) => {
