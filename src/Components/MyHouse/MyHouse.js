@@ -19,7 +19,9 @@ class MyHouse extends Component{
           this.props.getUserData(res.data)
         } catch(err){
           console.log('Error: Not signed in' , err)
-        } Swal({
+        } 
+        if(!this.props.user.id){
+            Swal({
             title: 'Unauthorized',
             text: "Log in to see page",
             type: 'error',
@@ -33,6 +35,7 @@ class MyHouse extends Component{
                 this.props.history.push('/')
             }
           })
+        }
     }
 
     render(){
@@ -43,13 +46,15 @@ class MyHouse extends Component{
                 {
                     id ? (
                         <div>
-                        <Link to='/'>Sign Out</Link>
-                        <br/>
-                        <Link to='/welcome'> Home </Link>
-                        Students
-                        <Link to='/myprofile'> My Profile </Link>
-                        <br/>
-                        My House
+                            <a href='http://localhost:4321/api/signout'>
+                                <button>Sign Out</button>
+                            </a>
+                            <br/>
+                            <Link to='/welcome'> Home </Link>
+                            Students
+                            <Link to='/myprofile'> My Profile </Link>
+                            <br/>
+                            My House
                         </div>
                         ) : <p>Please sign in</p>
                 }

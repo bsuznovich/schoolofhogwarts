@@ -19,7 +19,9 @@ class Hufflepuff extends Component{
           this.props.getUserData(res.data)
         } catch(err){
           console.log('Error: Not signed in' , err)
-        } Swal({
+        } 
+        if(!this.props.user.id){
+            Swal({
             title: 'Unauthorized',
             text: "Log in to see page",
             type: 'error',
@@ -33,6 +35,7 @@ class Hufflepuff extends Component{
                 this.props.history.push('/')
             }
           })
+        }
     }
 
     render(){
@@ -43,16 +46,18 @@ class Hufflepuff extends Component{
                 {
                     id ? (
                         <div>
-                        <Link to='/'>Sign Out</Link>
-                        <br/>
-                        <Link to='/welcome'> Home </Link>
-                        <Link to='/houses'> Houses </Link>
-                        <Link to='/myhouse/:houseid'> My House </Link>
-                        <Link to='/myprofile'> My Profile </Link>
-                        <br/>
-                        <Link to='/hufflepuff/students'>Students</Link>
-                        <br/>
-                        Hufflepuff
+                            <a href='http://localhost:4321/api/signout'>
+                                <button>Sign Out</button>
+                            </a>
+                            <br/>
+                            <Link to='/welcome'> Home </Link>
+                            <Link to='/houses'> Houses </Link>
+                            <Link to='/myhouse/:houseid'> My House </Link>
+                            <Link to='/myprofile'> My Profile </Link>
+                            <br/>
+                            <Link to='/hufflepuff/students'>Students</Link>
+                            <br/>
+                            Hufflepuff
                         </div>
                         ) : <p>Please sign in</p>
                 }

@@ -13,7 +13,9 @@ class Houses extends Component{
           this.props.getUserData(res.data)
         } catch(err){
           console.log('Error: Not signed in' , err)
-        } Swal({
+        } 
+        if(!this.props.user.id){
+            Swal({
             title: 'Unauthorized',
             text: "Log in to see page",
             type: 'error',
@@ -27,6 +29,7 @@ class Houses extends Component{
                 this.props.history.push('/')
             }
           })
+        }
     }
 
     render(){
@@ -37,18 +40,20 @@ class Houses extends Component{
                 {
                     id ? (
                         <div>
-                        <Link to='/'>Sign Out</Link>
-                        <br/>
-                        <Link to='/welcome'> Home </Link>
-                        <Link to='/myhouse/:houseid'> My House </Link>
-                        <Link to='/myprofile'> My Profile </Link>
-                        <br/>
-                        <Link to='/ravenclaw'> Ravenclaw </Link>
-                        <Link to='/gryffindor'> Gryffindor </Link>
-                        <Link to='/hufflepuff'> Hufflepuff </Link>
-                        <Link to='/slytherin'> Slytherin </Link>
-                        <br/>
-                        Houses
+                            <a href='http://localhost:4321/api/signout'>
+                                <button>Sign Out</button>
+                            </a>
+                            <br/>
+                            <Link to='/welcome'> Home </Link>
+                            <Link to='/myhouse/:houseid'> My House </Link>
+                            <Link to='/myprofile'> My Profile </Link>
+                            <br/>
+                            <Link to='/ravenclaw'> Ravenclaw </Link>
+                            <Link to='/gryffindor'> Gryffindor </Link>
+                            <Link to='/hufflepuff'> Hufflepuff </Link>
+                            <Link to='/slytherin'> Slytherin </Link>
+                            <br/>
+                            Houses
                         </div>
                         ) : <p>Please sign in</p>
                 }

@@ -28,4 +28,11 @@ app.post(`/api/enroll`, controller.enroll)
 
 app.post(`/api/signin`, controller.signIn)
 
-app.get(`/api/user-data`)
+app.get(`/api/user-data`, controller.userData)
+
+app.get(`/api/student/:id`, controller.myData)
+
+app.get(`/api/signout`, (req,res) => {
+    req.session.destroy()
+    res.redirect(`http://localhost:3000/#/`)
+})

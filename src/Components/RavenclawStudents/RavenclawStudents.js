@@ -21,7 +21,9 @@ class RavenclawStudents extends Component{
               this.props.getUserData(res.data)
             } catch(err){
               console.log('Error: Not signed in' , err)
-            } Swal({
+            } 
+            if(!this.props.user.id){
+                Swal({
                 title: 'Unauthorized',
                 text: "Log in to see page",
                 type: 'error',
@@ -35,6 +37,7 @@ class RavenclawStudents extends Component{
                     this.props.history.push('/')
                 }
               })
+            }
         
         this.getStudents(3)
     }
@@ -71,15 +74,17 @@ class RavenclawStudents extends Component{
                 {
                     id ? (
                         <div>
-                        <Link to='/'>Sign Out</Link>
-                        <br/>
-                        <Link to='/welcome'> Home </Link>
-                        <Link to='/houses'> Houses </Link>
-                        <Link to='/myhouse/:houseid'> My House </Link>
-                        <Link to='/myprofile'> My Profile </Link>
-                        <br/>
-                        Ravenclaw Students
-                        {studentList}
+                            <a href='http://localhost:4321/api/signout'>
+                                <button>Sign Out</button>
+                            </a>
+                            <br/>
+                            <Link to='/welcome'> Home </Link>
+                            <Link to='/houses'> Houses </Link>
+                            <Link to='/myhouse/:houseid'> My House </Link>
+                            <Link to='/myprofile'> My Profile </Link>
+                            <br/>
+                            Ravenclaw Students
+                            {studentList}
                         </div>
                         ) : <p>Please sign in</p>
                 }
