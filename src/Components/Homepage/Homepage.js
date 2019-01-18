@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import './Homepage.scss'
-import background from './homepage_background4.jpg'
 
 export default class Homepage extends Component{
     constructor(props){

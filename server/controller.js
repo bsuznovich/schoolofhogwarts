@@ -24,7 +24,7 @@ module.exports = {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
         let newStudentArr = await db.create_student({email: email, hash: hash, firstname: firstname, lastname: lastname})
-        req.session.user = {id: newStudentArr[0].id, email: newStudentArr[0].email}
+        req.session.user = {id: newStudentArr[0].id, email: newStudentArr[0].email, houseid: null}
         res.status(200).send({message: 'Signed in', userData: {...req.session.user}, signedIn: true})
 
         console.log(req.body)
@@ -153,7 +153,7 @@ module.exports = {
         if(!result){
             return res.status(401).send({message: 'Incorrect password'})
         }
-        req.session.user = {id: studentArr[0].id, email: studentArr[0].email}
+        req.session.user = {id: studentArr[0].id, email: studentArr[0].email, houseid: studentArr[0].houseid}
         res.status(200).send({message: 'Signed in', userData: {...req.session.user}, signedIn: true})
     },
 
@@ -174,7 +174,14 @@ module.exports = {
         }).catch(err => console.log(err))
     },
 
-    sort: (req,res) => {
-
+    sort: async (req,res) => {
+        const {email, houseid} = req.body
+        const db = req.app.get('db')
+        let studentHouse = await db.add_to_house({houseid: houseid, email: email})
+        if(studentHouse.houseid){
+            res.status(400).send({message: 'House already assigned'})
+        }
+        // req.session.user = {houseid: studentHouse[0].houseid}
+        res.status(200).send({message: 'House assigned', userData: {...req.session.user}})
     }
 }

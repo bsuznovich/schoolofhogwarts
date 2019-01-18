@@ -8,5 +8,15 @@
 
 .Nav {
     display: flex;
-    
+    justify-content: space-around;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.navBG {
+    background-color: aqua;
+    background-color: aqua;
+    margin-right: 17vw;
+    margin-left: 17vw;
+    height: 45px;
 }

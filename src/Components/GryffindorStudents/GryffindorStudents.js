@@ -78,12 +78,14 @@ class GryffindorStudents extends Component{
                                 <button>Sign Out</button>
                             </a>
                             <br/>
-                            <h3 className='Nav'>
-                                <Link to='/welcome'> Home </Link>
-                                <Link to='/houses'> Houses </Link>
-                                <Link to='/myhouse/:houseid'> My House </Link>
-                                <Link to='/myprofile'> My Profile </Link>
-                            </h3>
+                            <div className='navBG'>
+                                <h3 className='Nav'>
+                                    <Link to='/welcome'> Home </Link>
+                                    <Link to='/houses'> Houses </Link>
+                                    <Link to='/myhouse/:houseid'> My House </Link>
+                                    <Link to='/myprofile'> My Profile </Link>
+                                </h3>
+                            </div>
                             <br/>
                             Gryffindor Students
                             {studentList}
