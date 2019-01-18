@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import './Enroll.scss'
 
 export default class Enroll extends Component{
     constructor(props){
@@ -22,7 +23,7 @@ export default class Enroll extends Component{
 
     render(){
         return(
-            <div>
+            <div className='EBG'>
                 <p>Enroll</p>
                 <form method='POST' action='send'>
                     <span>Email: </span>

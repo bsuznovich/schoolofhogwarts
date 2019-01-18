@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import './SignIn.scss'
 
 export default class SignIn extends Component{
     constructor(props){
@@ -20,7 +21,8 @@ export default class SignIn extends Component{
 
     render(){
         return(
-            <div>
+            <div
+            className='SIBG'>
                 <p>Sign In</p>
                 <div>
                     <span>Email: </span>

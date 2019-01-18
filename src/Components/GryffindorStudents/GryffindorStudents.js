@@ -5,6 +5,7 @@ import Students from '../Students/Students'
 import Swal from 'sweetalert2'
 import {connect} from 'react-redux'
 import {getUserData} from '../../ducks/reducer'
+import './GryffindorStudents.scss'
 
 class GryffindorStudents extends Component{
     constructor(props){
@@ -69,7 +70,7 @@ class GryffindorStudents extends Component{
             )
         })
         return(
-            <div>
+            <div className='GDBG'>
                 {
                     id ? (
                         <div>
@@ -77,10 +78,12 @@ class GryffindorStudents extends Component{
                                 <button>Sign Out</button>
                             </a>
                             <br/>
-                            <Link to='/welcome'> Home </Link>
-                            <Link to='/houses'> Houses </Link>
-                            <Link to='/myhouse/:houseid'> My House </Link>
-                            <Link to='/myprofile'> My Profile </Link>
+                            <h3 className='Nav'>
+                                <Link to='/welcome'> Home </Link>
+                                <Link to='/houses'> Houses </Link>
+                                <Link to='/myhouse/:houseid'> My House </Link>
+                                <Link to='/myprofile'> My Profile </Link>
+                            </h3>
                             <br/>
                             Gryffindor Students
                             {studentList}

@@ -4,6 +4,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import {connect} from 'react-redux'
 import {getUserData} from '../../ducks/reducer'
+import './Gryffindor.scss'
 
 class Gryffindor extends Component{
     constructor(props){
@@ -42,7 +43,7 @@ class Gryffindor extends Component{
         console.log(this.props)
         const {id} = this.props.user
         return(
-            <div>
+            <div className='GryffBG'>
                 {
                     id ? (
                         <div>

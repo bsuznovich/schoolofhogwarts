@@ -124,19 +124,6 @@ module.exports = {
                     pass: PASS
                 }
             })
-
-            // const transporter = nodemailer.createTransport({
-            //     host: "smtp-mail.outlook.com", // hostname
-            //     secureConnection: false, // TLS requires secureConnection to be false
-            //     port: 587, // port for secure SMTP
-            //     tls: {
-            //        ciphers:'SSLv3'
-            //     },
-            //     auth: {
-            //         user: EMAIL,
-            //         pass: PASS
-            //     }
-            //  });
             let mailOptions = {
                 from: EMAIL,
                 to: req.body.email,
@@ -151,12 +138,10 @@ module.exports = {
                 } else {
                     res.status(200).send('yay')
                 }
-                // console.log(`message sent %s`, info.message)
-                // console.log(`message URL %s`, nodemailer.getTestMessageUrl(info))
             })
         })
     },
-// NB1rvhcK8vrKf7YPjv	gfg3hinp7n2ndqzu@ethereal.email
+    
     signIn: async (req,res) => {
         const {email, password} = req.body
         const db = req.app.get('db')
@@ -187,5 +172,9 @@ module.exports = {
         db.get_user_data({id}).then(response => {
             res.status(200).send(response)
         }).catch(err => console.log(err))
+    },
+
+    sort: (req,res) => {
+
     }
 }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import './Homepage.scss'
+import background from './homepage_background4.jpg'
 
 export default class Homepage extends Component{
     constructor(props){
@@ -15,11 +16,14 @@ export default class Homepage extends Component{
 
     render(){
         return(
-            <div>
-                <Link to='/signin'> Sign In </Link>
-                <Link to='/enroll'> Enroll </Link>
-                <br/>
-                Homepage
+            <div className='homebody'>
+                <div className='homepageBG'>
+                {/* <img src='homepage_background4.jpg' alt=''/> */}
+                    <Link to='/signin'> Sign In </Link>
+                    <Link to='/enroll'> Enroll </Link>
+                    <br/>
+                    Homepage
+                </div>
             </div>
         )
     }

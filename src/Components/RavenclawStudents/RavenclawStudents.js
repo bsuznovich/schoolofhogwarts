@@ -5,6 +5,7 @@ import Students from '../Students/Students'
 import Swal from 'sweetalert2'
 import {connect} from 'react-redux'
 import {getUserData} from '../../ducks/reducer'
+import './RavenclawStudents.scss'
 
 class RavenclawStudents extends Component{
     constructor(props){
@@ -70,7 +71,7 @@ class RavenclawStudents extends Component{
             )
         })
         return(
-            <div>
+            <div className='RCBG'>
                 {
                     id ? (
                         <div>

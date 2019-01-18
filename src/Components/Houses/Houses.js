@@ -4,6 +4,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import {connect} from 'react-redux'
 import {getUserData} from '../../ducks/reducer'
+import './Houses.scss'
 
 class Houses extends Component{
 
@@ -36,7 +37,7 @@ class Houses extends Component{
         console.log(this.props)
         const {id} = this.props.user
         return(
-            <div>
+            <div className='HousesBG'>
                 {
                     id ? (
                         <div>

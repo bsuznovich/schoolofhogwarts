@@ -4,6 +4,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import {connect} from 'react-redux'
 import {getUserData} from '../../ducks/reducer'
+import './Welcome.scss'
 
 class Welcome extends Component{
 
@@ -30,14 +31,31 @@ class Welcome extends Component{
             }
           })
         }
-    }   
+    } 
+    
+    async sort(){
+        let num = Math.floor((Math.random() * 4) + 1)
+        let gryffindor = 1
+        let hufflepuff = 2
+        let ravenclaw = 3
+        let slytherin = 4
+        if(num == gryffindor){
+
+        } else if (num == hufflepuff){
+
+        } else if (num == ravenclaw){
+
+        } else if (num == slytherin){
+            
+        }
+    }
     
 
     render(){
         console.log(this.props)
         const {id} = this.props.user
         return(
-            <div>
+            <div className='welcomebody'>
                 { 
                     id ? (
                         <div>
