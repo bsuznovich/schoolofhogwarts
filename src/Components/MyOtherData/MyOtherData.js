@@ -7,7 +7,6 @@ export default function MyData(props){
             <img src={props.picture} alt=''/>
             <p>First name: {props.firstname}</p>
             <p>Last name: {props.lastname}</p>
-            <p>House: {props.housename}</p>
             <p>Year: {props.year}</p>
             <p>Points: {props.studentpoints}</p>
         </div>

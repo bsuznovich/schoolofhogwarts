@@ -14,6 +14,7 @@ class MyHouse extends Component{
     }
 
     async componentDidMount(){
+        console.log(this.props.user)
         try {
           const res = await axios.get(`/api/user-data`)
           this.props.getUserData(res.data)
@@ -41,23 +42,47 @@ class MyHouse extends Component{
     render(){
         console.log(this.props)
         const {id} = this.props.user
+        let page
+        if(id && this.props.user.houseid === '1'){
+            page = <div>
+                        <h1>my house</h1>
+                        <h2>Gryffindor</h2>
+                    </div>
+        } else if(id && this.props.user.houseid === '2'){
+            page = <div>
+                <h1>my house</h1>
+                <h2>Hufflepuff</h2>
+            </div>
+        } else if(id && this.props.user.houseid === '3'){
+            page = <div>
+                <h1>my house</h1>
+                <h2>Ravenclaw</h2>
+            </div>
+        } else if(id && this.props.user.houseid === '4'){
+            page = <div>
+                <h1>my house</h1>
+                <h2>Slytherin</h2>
+            </div>
+        } else if(id && !this.props.user.houseid){
+            page = <div>
+                <h1>You do not have a house yet</h1>
+            </div>
+        } else if(!id){
+            page = <div>
+                <h1>Please sign in</h1>
+            </div>
+        }
         return(
             <div>
-                {
-                    id ? (
-                        <div>
-                            <a href='http://localhost:4321/api/signout'>
-                                <button>Sign Out</button>
-                            </a>
-                            <br/>
-                            <Link to='/welcome'> Home </Link>
+                <a href='http://localhost:4321/api/signout'>
+                             <button>Sign Out</button>
+                        </a>
+                        <br/>
+                        <Link to='/welcome'> Home </Link>
+                        <Link to='/houses'> Houses </Link>
                             Students
-                            <Link to='/myprofile'> My Profile </Link>
-                            <br/>
-                            My House
-                        </div>
-                        ) : <p>Please sign in</p>
-                }
+                        <Link to='/myprofile'> My Profile </Link>
+                {page}
             </div>
         )
     }

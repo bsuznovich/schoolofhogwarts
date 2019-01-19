@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import {connect} from 'react-redux'
 import {getUserData} from '../../ducks/reducer'
 import MyData from '../MyData/MyData'
+import MyOtherData from '../MyOtherData/MyOtherData'
 
 class MyProfile extends Component{
     constructor(props){
@@ -59,30 +60,53 @@ class MyProfile extends Component{
                         firstname={my.firstname}
                         lastname={my.lastname}
                         year={my.year}
-                        houseid={my.houseid}
-                        points={my.points}
+                        housename={my.housename}
+                        studentpoints={my.studentpoints}
                         picture={my.picture}
                         showInfo={() => this.showInfo(my.id)}/>
                 </div>
             )
         })
+        let myOtherList = this.state.myInfo.map(my => {
+            return(
+                <div>
+                        <MyOtherData key={my.id}
+                        firstname={my.firstname}
+                        lastname={my.lastname}
+                        year={my.year}
+                        studentpoints={my.studetpoints}
+                        picture={my.picture}
+                        showInfo={() => this.showInfo(my.id)}/>
+                </div>
+            )
+        })
+        let page
+        if(id && this.props.user.houseid){
+            page = <div>
+                {myList}
+            </div>
+        } else if(id && !this.props.user.houseid == null){
+            page = <div>
+                {myOtherList}
+            </div>
+        } else if(!id){
+            page = <div>
+                <h1>Please sign in</h1>
+            </div>
+        }
         return(
             <div>
-                {
-                    id ? (
-                        <div>
-                            <a href='http://localhost:4321/api/signout'>
-                                <button>Sign Out</button>
-                            </a>
-                            <br/>
-                            <Link to='/welcome'> Home </Link>
-                            <Link to='/myhouse/:houseid'> My House </Link>
-                            <br/>
-                            My Profile
-                            {myList}
-                        </div>
-                        ) : <p>Please sign in</p>
-                }
+                <div>
+                    <a href='http://localhost:4321/api/signout'>
+                        <button>Sign Out</button>
+                    </a>
+                    <br/>
+                    <Link to='/welcome'> Home </Link>
+                    <Link to='/myhouse/:houseid'> My House </Link>
+                    <br/>
+                    My Profile
+                    {page}
+                </div>
             </div>
         )
     }

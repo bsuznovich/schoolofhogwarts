@@ -1,6 +1,6 @@
 INSERT INTO student
 (
-    firstname, lastname, year, points, email, hash
+    firstname, lastname, year, studentpoints, email, hash
 )
 VALUES
 (

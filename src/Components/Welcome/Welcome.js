@@ -43,7 +43,7 @@ class Welcome extends Component{
             axios.post(`/api/sort`, {email: this.props.user.email, houseid: num})
             Swal({
                 title: 'Gryffindor',
-                text: "Congratulations! You have been assigned Gryffindor!",
+                text: "Congratulations! You have been assigned to Gryffindor!",
                 type: 'success',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
@@ -59,7 +59,7 @@ class Welcome extends Component{
             axios.post(`/api/sort`, {email: this.props.user.email, houseid: num})
             Swal({
                 title: 'Hufflepuff',
-                text: "Congratulations! You have been assigned Hufflepuff!",
+                text: "Congratulations! You have been assigned to Hufflepuff!",
                 type: 'success',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
@@ -75,7 +75,7 @@ class Welcome extends Component{
             axios.post(`/api/sort`, {email: this.props.user.email, houseid: num})
             Swal({
                 title: 'Ravenclaw',
-                text: "Congratulations! You have been assigned Ravenclaw!",
+                text: "Congratulations! You have been assigned to Ravenclaw!",
                 type: 'success',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
@@ -91,7 +91,7 @@ class Welcome extends Component{
             axios.post(`/api/sort`, {email: this.props.user.email, houseid: num})
             Swal({
                 title: 'Slytherin',
-                text: "Congratulations! You have been assigned Slytherin!",
+                text: "Congratulations! You have been assigned to Slytherin!",
                 type: 'success',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
