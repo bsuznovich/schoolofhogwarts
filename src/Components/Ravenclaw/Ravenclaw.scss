@@ -1,7 +1,55 @@
+$raven: #0e1a40;
+$gryffin: #740001;
+$huffle: #ecb939;
+$slyther: #1a472a;
+
+@font-face {
+    font-family: 'magic';
+    src: url('MagicSchoolOne.ttf')
+}
+
+@font-face {
+    font-family: 'dumbledore';
+    src: url('dum1.ttf')
+}
+
 .ravenBG {
     height: 100vh;
     background-image: url('ravenclaw.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover 
+}
+
+.ravenclaw {
+    height: 13vh;
+    background-color: rgb(228, 231, 235);
+    border: 1px solid black;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 65px;
+    border-radius: 5px;
+    font-family: 'dumbledore';
+}
+
+.navraven {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 6vh;
+    width: 75vw;
+    margin-right: 0px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #5d5d5d;
+}
+
+.studenthousepoints {
+    display: flex;
+    justify-content: space-around;
+}
+
+.studentbtnraven {
+
 }

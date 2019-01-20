@@ -114,20 +114,50 @@ class Welcome extends Component{
             <div className='welcomebody'>
                 { 
                     id ? (
-                        <div>
+                        <div className='pageBG'>
+                            <div className='header'>
                             <a href='http://localhost:4321/api/signout'>
-                                <button>Sign Out</button>
+                                <button className='signout'>Sign Out</button>
                             </a>
+                            <h1 className='welcome'>Welcome to Hogwarts school of 
                             <br/>
-                            <Link to='/houses'> Houses </Link>
-                            <Link to='/myhouse/:houseid'> My House </Link>
-                            <Link to='/myprofile'> My Profile </Link>
+                            witchcraft and wizardry</h1>
+                            </div>
+                            <div className='navholder'>
+                                <nav>
+                                    <p className='houseslink'>
+                                        <Link to='/houses'> Houses </Link>
+                                    </p>
+                                    <p className='myhouselink'>
+                                        <Link to='/myhouse/:houseid'> My House </Link>
+                                    </p>
+                                    <p className='profilelink'>
+                                        <Link to='/myprofile'> My Profile </Link>
+                                    </p>
+                                </nav>
+                            </div>
+                            <button className='joinbtn' onClick={() => this.sort()}>Join the Sorting Ceremony</button>
+                            <div className='body'>
                             <br/>
-                            Welcome
                             <br/>
-                            <button onClick={() => this.sort()}>Join the Sorting Ceremony</button>
+                                <p>
+                                    Congratulations and welcome to Hogwarts! We are pleased to have you join our amazing school! Here you will learn how to mix potions, cast charms, learn how to defend yourself against the dark arts, and much more. 
+                                </p>
+                                <p>
+                                    Before you can go to class and participate in all the fun things we have going on around the castle, you must first join the Sorting Ceremony. 
+                                </p>
+                                <p>
+                                    The famous Hogwarts Sorting Hat gives an account of its own genesis in a series of songs sung at the beginning of each school year. Legend has it that the hat once belonged to one of the four founders, Godric Gryffindor, and that it was jointly enchanted by all four founders to ensure that students would be sorted into their eponymous houses, which would be selected according to each founder’s particular preferences in students.
+                                </p>
+                                <p>
+                                    The Sorting Hat is one of the cleverest enchanted objects most witches and wizards will ever meet. It literally contains the intelligence of the four founders, can speak (through a rip near its brim) and is skilled at Legilimency, which enables it to look into the wearer’s head and divine his or her capabilities or mood. It can even respond to the thoughts of the wearer.
+                                </p>
+                                <p>
+                                    The Sorting Hat is notorious for refusing to admit it has made a mistake in its sorting of a student. On those occasions when Slytherins behave altruistically or selflessly, when Ravenclaws flunk all their exams, when Hufflepuffs prove lazy yet academically gifted and when Gryffindors exhibit cowardice, the Hat steadfastly backs its original decision. On balance, however, the Hat has made remarkably few errors of judgement over the many centuries it has been at work.
+                                </p>
+                            </div>
                         </div>
-                    ) : <p>Please sign in <Link to='/'>Homepage</Link></p>
+                    ) : <h1>Please sign in</h1>
                 }
             </div>
         )

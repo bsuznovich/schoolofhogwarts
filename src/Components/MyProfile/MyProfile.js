@@ -85,7 +85,7 @@ class MyProfile extends Component{
             page = <div>
                 {myList}
             </div>
-        } else if(id && !this.props.user.houseid == null){
+        } else if(id && !this.props.user.houseid === null){
             page = <div>
                 {myOtherList}
             </div>

@@ -1,11 +1,153 @@
+$raven: #0e1a40;
+$gryffin: #740001;
+$huffle: #ecb939;
+$slyther: #1a472a;
+
+$list1: $raven, $gryffin, $huffle, $slyther;
+
+@mixin gradient($direction, $list) {
+    background: -webkit-linear-gradient($direction, $list);
+    background: -moz-linear-gradient($direction, $list);
+    background: -o-linear-gradient($direction, $list);
+    background: linear-gradient($direction, $list)
+}
+
+@font-face {
+    font-family: 'magic';
+    src: url('MagicSchoolOne.ttf')
+}
+
+@font-face {
+    font-family: 'dumbledore';
+    src: url('dum1.ttf')
+}
+
 body::-webkit-scrollbar {
     width: 0px;
     height: 0px;
 }
+
 .homebody {
     height: 100vh;
     background-image: url('homepage_background4.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover 
+}
+
+.littlespace {
+    height: 10px
+}
+
+.homepageBG {
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.hogwarts {
+    background-image: url('https://wallimpex.com/data/out/738/hogwarts-crest-wallpaper-10882350.jpg');
+    height: 13vh;
+    // background-color: rgb(228, 231, 235);
+    // border: 1px solid black;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 65px;
+    border-radius: 5px;
+    font-family: 'dumbledore';
+}
+
+.houses {
+    position: relative;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    margin-top: -35px;
+    z-index: 10;
+}
+
+.ravenbtn {
+    background-color: $raven;
+    height: 16vh;
+    width: 13vw;
+    border-radius: 20%;
+    border: 1px solid black;
+    font-size: 1.5em;
+    color: #5d5d5d;
+    font-family: 'dumbledore';
+    font-size: 2.5em;
+}
+
+.gryffinbtn {
+    background-color: $gryffin;
+    height: 16vh;
+    width: 13vw;
+    border-radius: 20%;
+    border: 1px solid black;
+    font-size: 1.5em;
+    color: #eeba30;
+    font-family: 'dumbledore';
+    font-size: 2.5em;
+}
+
+.hufflebtn {
+    background-color: $huffle;
+    height: 16vh;
+    width: 13vw;
+    border-radius: 20%;
+    border: 1px solid black;
+    font-size: 1.5em;
+    color: #726255;
+    font-family: 'dumbledore';
+    font-size:2.5em;
+}
+
+.slythbtn {
+    background-color: $slyther;
+    height: 16vh;
+    width: 13vw;
+    border-radius: 20%;
+    border: 1px solid black;
+    font-size: 1.5em;
+    color: #5d5d5d;
+    font-family: 'dumbledore';
+    font-size: 2.5em;
+}
+
+.logen {
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 70px;
+}
+
+.logenbtn{
+    position: relative;
+    background-color: #ccad93;
+    height: 9vh;
+    width: 13vw;
+    border: 1px solid black;
+    border-radius: 25%;
+    font-size: 1.3em;
+    z-index: 10;
+    font-family: 'dumbledore';
+    font-size: 2.5em;
+}
+
+.body {
+    background-color: aliceblue;
+    border: 1px solid black;
+    margin-top: -25px;
+    border-radius: 5px;
+    opacity: 0.5;
+    z-index: 5
+}
+
+p {
+    font-size: 18px;
+    margin-left: 25px;
+    margin-right: 25px;
+    opacity: 1;
 }

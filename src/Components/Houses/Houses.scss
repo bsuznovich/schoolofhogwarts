@@ -1,7 +1,129 @@
+$raven: #0e1a40;
+$gryffin: #740001;
+$huffle: #ecb939;
+$slyther: #1a472a;
+
+@font-face {
+    font-family: 'magic';
+    src: url('MagicSchoolOne.ttf')
+}
+
+@font-face {
+    font-family: 'dumbledore';
+    src: url('dum1.ttf')
+}
+
 .HousesBG {
     height: 100vh;
     background-image: url('houses.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover 
+}
+
+.homelink {
+    margin-left: 6vw;
+    font-family: 'dumbledore';
+    font-size: 2.5em;
+}
+
+.school {
+    background-image: url('https://wallimpex.com/data/out/738/hogwarts-crest-wallpaper-10882350.jpg');
+    height: 13vh;
+    background-color: rgb(228, 231, 235);
+    border: 1px solid black;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 65px;
+    border-radius: 5px;
+    font-family: 'dumbledore';
+}
+
+.houseslist {
+    display: flex;
+    justify-content: center;
+}
+
+.ravenclawbtn {
+    height: 5vh;
+    width: 20vw;
+    margin: -26px;
+    border: 1px solid black;
+    font-size: 3vh;
+    background-color: $raven;
+    color: #5d5d5d;
+}
+
+.gryffindorbtn {
+    height: 5vh;
+    width: 20vw;
+    margin: -26px;
+    border: 1px solid black;
+    font-size: 3vh;
+    color: $gryffin;
+    background-color: #eeba30;
+}
+
+.hufflepuffbtn {
+    height: 5vh;
+    width: 20vw;
+    margin: -26px;
+    border: 1px solid black;
+    font-size: 3vh;
+    color: $huffle;
+    background-color: #726255;
+}
+
+.slytherinbtn {
+    height: 5vh;
+    width: 20vw;
+    margin: -26px;
+    border: 1px solid black;
+    font-size: 3vh;
+    background-color: $slyther;
+    color: #5d5d5d;
+}
+
+.descript {
+    display: flex;
+    justify-content: center;
+    margin-top: -12px
+}
+
+.ravendes {
+    width: 19.9vw;
+    // border: 1px solid black;
+    background-color: #946b2d;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.gryffindes {
+    width: 19.9vw;
+    border: 1px solid black;
+    background-color: #ae0001;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.huffledes {
+    width: 19.9vw;
+    // border: 1px solid black;
+    background-color: $huffle;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+}
+
+.slytherdes {
+    width: 19.9vw;
+    border: 1px solid black;
+    background-color: #aaaaaa;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
 }

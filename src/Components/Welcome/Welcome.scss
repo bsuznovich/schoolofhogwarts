@@ -1,7 +1,96 @@
+$raven: #0e1a40;
+$gryffin: #740001;
+$huffle: #ecb939;
+$slyther: #1a472a;
+
+@font-face {
+    font-family: 'magic';
+    src: url('MagicSchoolOne.ttf')
+}
+
+@font-face {
+    font-family: 'dumbledore';
+    src: url('dum1.ttf')
+}
+
 .welcomebody {
     height: 100vh;
     background-image: url('welcome_background.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover 
+}
+
+.pageBG {
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+
+.signout {
+    position: relative;
+    z-index: 10;
+    margin-left: 72vw;
+}
+
+.welcome {
+    height: 19vh;
+    background-color: rgb(228, 231, 235);
+    border: 1px solid black;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 65px;
+    border-radius: 5px;
+    font-family: 'dumbledore';
+}
+
+.navholder {
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+    margin-bottom: 45px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 6vh;
+    width: 75vw;
+    margin-right: 0px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: $gryffin;
+}
+
+.houseslink {
+    margin-left: 6vw;
+    font-family: 'dumbledore';
+    font-size: 2.5em;
+}
+
+.myhouselink {
+    font-family: 'dumbledore';
+    font-size: 2.5em;
+    margin-left: 2.2em;
+}
+
+.profilelink {
+    margin-right: 6vw;
+    font-family: 'dumbledore';
+    font-size: 2.5em;
+}
+
+.joinbtn { 
+    position: relative;
+    z-index: 10;
+    height: 6vh;
+    width: 17vw;
+    background-color: $huffle;
+    font-family: 'dumbledore';
+    font-size: 1.3em;
+    color: $slyther;
+    border: 1px solid black;
+    border-radius: 10px;
 }
