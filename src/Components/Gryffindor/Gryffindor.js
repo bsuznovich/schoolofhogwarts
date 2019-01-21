@@ -46,41 +46,43 @@ class Gryffindor extends Component{
             <div className='GryffBG'>
                 {
                     id ? (
-                        <div>
+                        <div className='pageBG'>
                             <a href='http://localhost:4321/api/signout'>
                                 <button>Sign Out</button>
                             </a>
-                            <h1>Gryffindor</h1>
-                            <nav>
-                                <p>
-                                    <Link to='/welcome'> Home </Link>
-                                </p>
-                                <p>
-                                    <Link to='/houses'> Houses </Link>
-                                </p>
-                                <p>
-                                    <Link to='/myhouse/:houseid'> My House </Link>
-                                </p>
-                                <p>
-                                    <Link to='/myprofile'> My Profile </Link>
-                                </p>
-                            </nav>
-                            <div>
-                                <p>
-                                    <Link to='/gryffindor/students'>Students</Link>
-                                </p>
-                                <p>
+                            <h1 className='gryffindor'>Gryffindor</h1>
+                            <div className='navholder'>
+                                <nav className='navgryffin'>
+                                    <p className='homelink'>
+                                        <Link to='/welcome'> Home </Link>
+                                    </p>
+                                    <p className='houseslink'>
+                                        <Link to='/houses'> Houses </Link>
+                                    </p>
+                                    <p className='myhouselink'>
+                                        <Link to='/myhouse/:houseid'> My House </Link>
+                                    </p>
+                                    <p className='profilelink'>
+                                        <Link to='/myprofile'> My Profile </Link>
+                                    </p>
+                                </nav>
+                            </div>
+                            <div className='studenthousepoints'>
+                                    <Link to='/gryffindor/students'><button className='studentbtngryffin'>Students</button></Link>
+                                <p className='housepointsgryffin'>
                                     House Points:
                                 </p>
                             </div>
-                            <div>
-                                <p>
+                            <div className='ravenbody'>
+                            <br/>
+                            <br/>
+                                <p className='raventext'>
                                 Congratulations! I’m Prefect Percy Weasley, and I’m delighted to welcome you to GRYFFINDOR HOUSE. Our emblem is the lion, the bravest of all creatures; our house colours are scarlet and gold, and our common room lies up in Gryffindor Tower.
                                 </p>
-                                <p>
+                                <p className='raventext'>
                                 This is, quite simply, the best house at Hogwarts. It’s where the bravest and boldest end up – for instance: Albus Dumbledore! Yes, Dumbledore himself, the greatest wizard of our time, was a Gryffindor! If that’s not enough for you, I don’t know what is.
                                 </p>
-                                <p>
+                                <p className='raventext'>
                                 I won’t keep you long, as all you need to do to find out more about your house is to follow Harry Potter and his friends as I lead them up to their dormitories. Enjoy your time at Hogwarts – but how could you fail to? You’ve become part of the best house in the school.
                                 </p>
                             </div>

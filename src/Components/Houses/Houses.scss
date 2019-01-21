@@ -13,6 +13,11 @@ $slyther: #1a472a;
     src: url('dum1.ttf')
 }
 
+@font-face {
+    font-family: 'potter';
+    src: url('potter.ttf')
+}
+
 .HousesBG {
     height: 100vh;
     background-image: url('houses.jpg');
@@ -53,6 +58,8 @@ $slyther: #1a472a;
     font-size: 3vh;
     background-color: $raven;
     color: #5d5d5d;
+    font-family: 'dumbledore';
+    font-size: 2em;
 }
 
 .gryffindorbtn {
@@ -63,6 +70,8 @@ $slyther: #1a472a;
     font-size: 3vh;
     color: $gryffin;
     background-color: #eeba30;
+    font-family: 'dumbledore';
+    font-size: 2em;
 }
 
 .hufflepuffbtn {
@@ -73,6 +82,8 @@ $slyther: #1a472a;
     font-size: 3vh;
     color: $huffle;
     background-color: #726255;
+    font-family: 'dumbledore';
+    font-size: 2em;
 }
 
 .slytherinbtn {
@@ -83,6 +94,8 @@ $slyther: #1a472a;
     font-size: 3vh;
     background-color: $slyther;
     color: #5d5d5d;
+    font-family: 'dumbledore';
+    font-size: 2em;
 }
 
 .descript {
@@ -98,6 +111,7 @@ $slyther: #1a472a;
     padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
+    font-family: 'potter';
 }
 
 .gryffindes {
@@ -107,6 +121,7 @@ $slyther: #1a472a;
     padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
+    font-family: 'potter';
 }
 
 .huffledes {
@@ -117,6 +132,7 @@ $slyther: #1a472a;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 15px;
+    font-family: 'potter';
 }
 
 .slytherdes {
@@ -126,4 +142,5 @@ $slyther: #1a472a;
     padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
+    font-family: 'potter';
 }
