@@ -43,26 +43,14 @@ class MyHouse extends Component{
         console.log(this.props)
         const {id} = this.props.user
         let page
-        if(id && this.props.user.houseid === '1'){
-            page = <div>
-                        <h1>my house</h1>
-                        <h2>Gryffindor</h2>
-                    </div>
-        } else if(id && this.props.user.houseid === '2'){
-            page = <div>
-                <h1>my house</h1>
-                <h2>Hufflepuff</h2>
-            </div>
-        } else if(id && this.props.user.houseid === '3'){
-            page = <div>
-                <h1>my house</h1>
-                <h2>Ravenclaw</h2>
-            </div>
-        } else if(id && this.props.user.houseid === '4'){
-            page = <div>
-                <h1>my house</h1>
-                <h2>Slytherin</h2>
-            </div>
+        if(id && this.props.user.houseid === 1){
+            this.props.history.push('/gryffindor')
+        } else if(id && this.props.user.houseid === 2){
+            this.props.history.push('/hufflepuff')
+        } else if(id && this.props.user.houseid === 3){
+            this.props.history.push('/ravenclaw')
+        } else if(id && this.props.user.houseid === 4){
+            this.props.history.push('/slytherin')
         } else if(id && !this.props.user.houseid){
             page = <div>
                 <h1>You do not have a house yet</h1>

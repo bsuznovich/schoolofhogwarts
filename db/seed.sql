@@ -6,13 +6,13 @@ lastname VARCHAR(150) NOT NULL,
 year VARCHAR(1),
 houseid INTEGER references house(id),
 studentpoints VARCHAR(3) NOT NULL,
-picture TEXT,
+studentpicture TEXT,
 email VARCHAR(150) NOT NULL,
 hash VARCHAR(150)
 );
 
 -- insert into student 
---     (firstname, lastname, year, studentpoints, houseid, picture, email)
+--     (firstname, lastname, year, studentpoints, houseid, studentpicture, email)
 -- values ('Harry', 'Potter', '5', '30', 1, 'https://vignette.wikia.nocookie.net/rifftrax/images/5/53/550w_movies_harry_potter_order_of_phoenix_1.jpg/revision/latest?cb=20140621181250', 'hpotter@hogwarts.student.edu'),
 -- ('Hermione', 'Granger', '5', '45', 1, 'https://i.pinimg.com/originals/d3/e1/cf/d3e1cfaa6a1fe9ea9e5830f98a166b71.jpg', 'hgranger@hogwarts.student.edu'),
 -- ('Ronald', 'Weasley', '5', '15', 1, 'http://images4.fanpop.com/image/photos/22600000/Ronald-harry-potter-22633771-294-294.png', 'rweasley@hogwarts.student.edu'),

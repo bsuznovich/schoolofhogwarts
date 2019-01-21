@@ -24,7 +24,7 @@ module.exports = {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
         let newStudentArr = await db.create_student({email: email, hash: hash, firstname: firstname, lastname: lastname})
-        req.session.user = {id: newStudentArr[0].id, email: newStudentArr[0].email, houseid: null}
+        req.session.user = {id: newStudentArr[0].id, email: newStudentArr[0].email, houseid: null, firstname: newStudentArr[0].firstname, lastname: newStudentArr[0].lastname, year: '1', points: '0'}
         res.status(200).send({message: 'Signed in', userData: {...req.session.user}, signedIn: true})
 
         console.log(req.body)
@@ -158,9 +158,12 @@ module.exports = {
     },
 
     userData: async (req,res) => {
+        console.log(req.session)
         if(req.session.user){
-            console.log(req.session.user)
-            res.status(200).send(req.session.user)
+            const db = req.app.get('db')
+            db.get_user_data({id: req.session.user.id}).then(response => {
+                res.status(200).send(response[0])
+            }).catch(err => console.log(err))
         } else{
             res.status(401).send('Must sign in')
         }
@@ -181,7 +184,16 @@ module.exports = {
         if(studentHouse.houseid){
             res.status(400).send({message: 'House already assigned'})
         }
-        // req.session.user = {houseid: studentHouse[0].houseid}
+        req.session.user.houseid = houseid
         res.status(200).send({message: 'House assigned', userData: {...req.session.user}})
+    },
+
+    updateUserInfo: async (req,res) => {
+        const {id, firstname, lastname, year, studentpoints} = req.body
+        const db = req.app.get('db')
+        let newName = await db.update_user({id: id, firstname: firstname, lastname: lastname, year: year, studentpoints: studentpoints})
+        // req.session.user.firstname = firstname
+        console.log(newName)
+        res.status(200).send(newName)
     }
 }

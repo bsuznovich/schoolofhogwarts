@@ -3,6 +3,8 @@ const initialState = {
 }
 
 const GET_USER_DATA = 'GET_USER_DATA'
+const UPDATE_USER_DATA = 'UPDATE_USER_DATA'
+
 
 export function getUserData(userInfo){
     return{
@@ -11,10 +13,19 @@ export function getUserData(userInfo){
     }
 }
 
+export function updateUserInfo(newInfo, prop){
+    return{
+        type: UPDATE_USER_DATA,
+        payload: {[prop]: newInfo}
+    }
+}
+
 export default function reducer(state=initialState, action){
     switch(action.type){
         case GET_USER_DATA:
                 return{...state, user: action.payload}
+        case UPDATE_USER_DATA:
+                return{...state, user: {...state.user, ...action.payload}}        
         default:
         return state
     }

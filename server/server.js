@@ -4,7 +4,7 @@ const express = require('express')
 const session = require('express-session')
 const controller = require('./controller')
 
-const {SERVER_PORT, CONNECTION_STRING, SECRET} = process.env
+const {SERVER_PORT, CONNECTION_STRING, SECRET, NODE_ENV, ENVIRONMENT} = process.env
 
 const app = express()
 
@@ -20,6 +20,17 @@ massive(CONNECTION_STRING).then((db) => {
     app.listen(SERVER_PORT, () => {
         console.log(`Revelio on port ${SERVER_PORT}`)
     })
+})
+
+app.use(async (req, res, next) => {
+    if(ENVIRONMENT === 'dev'){
+        const db = req.app.get('db')
+        const userData = await db.set_data()
+        req.session.user = userData[0]
+        next()
+    }else{
+        next()
+    }
 })
 
 app.get(`/api/students/:houseid`, controller.getStudents)
@@ -38,3 +49,5 @@ app.get(`/api/signout`, (req,res) => {
 })
 
 app.post(`/api/sort`, controller.sort)
+
+app.put(`/api/userinfo`, controller.updateUserInfo)
