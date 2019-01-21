@@ -50,8 +50,8 @@ class MyProfile extends Component {
 
     save = () => {
         const {firstname, lastname, year, studentpoints} = this.props.user
-        const updateUser = {firstname, lastname, year, studentpoints};
-        axios.put('/api/userinfo', {updateUser}).then(res => {
+        // const updateUser = {firstname, lastname, year, studentpoints};
+        axios.put('/api/userinfo', {firstname, lastname, year, studentpoints}).then(res => {
             this.setState({
                 myInfo: res.data,
                 editToggle: true

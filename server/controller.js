@@ -189,11 +189,17 @@ module.exports = {
     },
 
     updateUserInfo: async (req,res) => {
-        const {id, firstname, lastname, year, studentpoints} = req.body
+        const {firstname, lastname, year, studentpoints} = req.body
+        const {id} = req.session.user
         const db = req.app.get('db')
         let newName = await db.update_user({id: id, firstname: firstname, lastname: lastname, year: year, studentpoints: studentpoints})
-        // req.session.user.firstname = firstname
-        console.log(newName)
-        res.status(200).send(newName)
+        req.session.user.firstname = firstname
+        req.session.user.lastname = lastname
+        req.session.user.year = year
+        req.session.user.studentpoints = studentpoints
+        // console.log(newName)
+        res.status(200).send({message: 'updated', userData: {...req.session.user, newName}})
+        console.log(req.session.user)
+        console.log(req.body)
     }
 }
