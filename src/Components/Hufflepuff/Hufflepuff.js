@@ -37,6 +37,16 @@ class Hufflepuff extends Component{
             }
           })
         }
+        this.getHousePoints(2)
+    }
+
+    getHousePoints = (id) => {
+        axios.get(`/api/housepoints/${id}`).then(res => {
+            console.log(res.data)
+            this.setState({
+                points: res.data[0].points
+            })
+        })
     }
 
     render(){
@@ -69,10 +79,10 @@ class Hufflepuff extends Component{
                             </div>
                             <div className='studenthousepoints'>
                                 <p>
-                                    <Link to='/gryffindor/students'><button className='studentbtnhuffle'>Students</button></Link>
+                                    <Link to='/hufflepuff/students'><button className='studentbtnhuffle'>Students</button></Link>
                                 </p>
                                 <p className='housepointshuffle'>
-                                    House Points: 
+                                    House Points: {this.state.points}
                                 </p>
                             </div>
                             <div className='ravenbody'>

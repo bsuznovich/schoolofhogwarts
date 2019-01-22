@@ -1,3 +1,8 @@
+$raven: #0e1a40;
+$gryffin: #740001;
+$huffle: #ecb939;
+$slyther: #1a472a;
+
 .SSBG {
     height: 100vh;
     background-image: url('slytherin.jpg');
@@ -5,4 +10,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+}
+
+.studentslytherBG {
+    background-color: $slyther;
+    border: 1px solid black;
+    margin-top: -75px;
 }

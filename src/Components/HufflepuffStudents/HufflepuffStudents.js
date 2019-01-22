@@ -11,6 +11,7 @@ class HufflepuffStudents extends Component{
     constructor(props){
         super(props)
         this.state = {
+            points: [],
             students: [],
             quidditch: []
         }
@@ -39,8 +40,17 @@ class HufflepuffStudents extends Component{
                 }
               })
             }
-        
+        this.getHousePoints(2)
         this.getStudents(2)
+    }
+
+    getHousePoints = (id) => {
+        axios.get(`/api/housepoints/${id}`).then(res => {
+            console.log(res.data)
+            this.setState({
+                points: res.data[0].points
+            })
+        })
     }
 
     getStudents = (houseId) => {
@@ -64,8 +74,8 @@ class HufflepuffStudents extends Component{
                     lastname={student.lastname}
                     year={student.year}
                     houseid={student.houseid}
-                    points={student.points}
-                    picture={student.picture}
+                    points={student.studentpoints}
+                    picture={student.studentpicture}
                     getStudents={() => this.getStudents(student.houseid)}/>
                 </div>
             )
@@ -75,18 +85,37 @@ class HufflepuffStudents extends Component{
             className='HPBG'>
                 {
                     id ? (
-                        <div>
+                        <div className='pageBG'>
                             <a href='http://localhost:4321/api/signout'>
                                 <button>Sign Out</button>
                             </a>
+                            <h1 className='hufflepuff'>Hufflepuff</h1>
+                            <div className='navholder'>
+                                <nav className='navhuffle'>
+                                    <p className='homelink'>
+                                        <Link to='/welcome'> Home </Link>
+                                    </p>
+                                    <p className='houseslink'>
+                                        <Link to='/houses'> Houses </Link>
+                                    </p>
+                                    <p className='myhouselink'>
+                                        <Link to='/myhouse/:houseid'> My House </Link>
+                                    </p>
+                                    <p className='profilelink'>
+                                        <Link to='/myprofile'> My Profile </Link>
+                                    </p>
+                                </nav>
+                            </div>
+                            <div className='studenthousepointsgryffin'>
+                                <p className='housepointshuffle'>
+                                    House Points: {this.state.points}
+                                </p>
+                            </div>
+                            <div className='studenthuffleBG'>
                             <br/>
-                            <Link to='/welcome'> Home </Link>
-                            <Link to='/houses'> Houses </Link>
-                            <Link to='/myhouse/:houseid'> My House </Link>
-                            <Link to='/myprofile'> My Profile </Link>
                             <br/>
-                            Hufflepuff Students
-                            {studentList}
+                                {studentList}
+                            </div>
                         </div>
                         ) : <p>Please sign in</p>
                 }

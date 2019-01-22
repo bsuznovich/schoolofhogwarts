@@ -4,8 +4,6 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import { connect } from 'react-redux'
 import { getUserData, updateUserInfo } from '../../ducks/reducer'
-import MyData from '../MyData/MyData'
-import MyOtherData from '../MyOtherData/MyOtherData'
 
 class MyProfile extends Component {
     constructor(props) {
@@ -61,8 +59,8 @@ class MyProfile extends Component {
 
     render() {
         console.log(this.props)
-        const { id } = this.props.user
-        const { myInfo: my } = this.state
+        // const { id } = this.props.user
+        // const { myInfo: my } = this.state
         return (
             <div>
                 <div>
@@ -71,7 +69,9 @@ class MyProfile extends Component {
                     </a>
                     <br />
                     <Link to='/welcome'> Home </Link>
+                    <Link to='/houses'> Houses </Link>
                     <Link to='/myhouse/:houseid'> My House </Link>
+                    <Link to='/myprofile'> My Profile </Link>
                     <br />
                     My Profile
                     <div>
@@ -90,9 +90,13 @@ class MyProfile extends Component {
                             )
                             : (
                                 <>
+                                    <p>First name: </p>
                                     <input value={this.props.user.firstname} name='firstname' onChange={({target}) => this.props.updateUserInfo(target.value, target.name)}/>
+                                    <p>Last name: </p>
                                     <input value={this.props.user.lastname} name='lastname' onChange={({target}) => this.props.updateUserInfo(target.value, target.name)}/>
+                                    <p>Year: </p>
                                     <input value={this.props.user.year} name='year' onChange={({target}) => this.props.updateUserInfo(target.value, target.name)}/>
+                                    <p>Points: </p>
                                     <input value={this.props.user.studentpoints} name='studentpoints' onChange={({target}) => this.props.updateUserInfo(target.value, target.name)}/>
                                 </>
                             )}

@@ -51,3 +51,7 @@ app.get(`/api/signout`, (req,res) => {
 app.post(`/api/sort`, controller.sort)
 
 app.put(`/api/userinfo`, controller.updateUserInfo)
+
+app.get('/api/housepoints/:id', controller.getHousePoints)
+
+app.post('/api/updatepoints', controller.addPoints)

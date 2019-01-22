@@ -1,7 +1,18 @@
+$raven: #0e1a40;
+$gryffin: #740001;
+$huffle: #ecb939;
+$slyther: #1a472a;
+
 .HPBG {
     height: 100vh;
     background-image: url('hufflepuff.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover 
+}
+
+.studenthuffleBG {
+    background-color: #726255;
+    border: 1px solid black;
+    margin-top: -75px;
 }

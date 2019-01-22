@@ -37,6 +37,16 @@ class Slytherin extends Component{
             }
           })
         }
+        this.getHousePoints(4)
+    }
+
+    getHousePoints = (id) => {
+        axios.get(`/api/housepoints/${id}`).then(res => {
+            console.log(res.data)
+            this.setState({
+                points: res.data[0].points
+            })
+        })
     }
 
     render(){
@@ -68,9 +78,9 @@ class Slytherin extends Component{
                                 </nav>
                             </div>
                             <div className='studenthousepoints'>
-                                    <Link to='/gryffindor/students'><button className='studentbtnslyther'>Students</button></Link>
+                                    <Link to='/slytherin/students'><button className='studentbtnslyther'>Students</button></Link>
                                 <p className='housepointsslyther'>
-                                    House Points: 
+                                    House Points: {this.state.points}
                                 </p>
                             </div>
                             <div className='ravenbody'>

@@ -11,6 +11,7 @@ class GryffindorStudents extends Component{
     constructor(props){
         super(props)
         this.state = {
+            points: [],
             students: [],
             quidditch: []
         }
@@ -39,8 +40,17 @@ class GryffindorStudents extends Component{
                 }
               })
             }
-        
+        this.getHousePoints(1)
         this.getStudents(1)
+    }
+
+    getHousePoints = (id) => {
+        axios.get(`/api/housepoints/${id}`).then(res => {
+            console.log(res.data)
+            this.setState({
+                points: res.data[0].points
+            })
+        })
     }
 
     getStudents = (houseId) => {
@@ -57,15 +67,15 @@ class GryffindorStudents extends Component{
         let studentList = this.state.students.map(student => {
             return(
                 <div>
-                            <Students key={student.id}
-                            id={student.id}
-                            firstname={student.firstname}
-                            lastname={student.lastname}
-                            year={student.year}
-                            houseid={student.houseid}
-                            points={student.points}
-                            picture={student.picture}
-                            getStudents={() => this.getStudents(student.houseid)}/>
+                    <Students key={student.id}
+                    id={student.id}
+                    firstname={student.firstname}
+                    lastname={student.lastname}
+                    year={student.year}
+                    houseid={student.houseid}
+                    points={student.studentpoints}
+                    picture={student.studentpicture}
+                    getStudents={() => this.getStudents(student.houseid)}/>
                 </div>
             )
         })
@@ -73,22 +83,37 @@ class GryffindorStudents extends Component{
             <div className='GDBG'>
                 {
                     id ? (
-                        <div>
+                        <div className='pageBG'>
                             <a href='http://localhost:4321/api/signout'>
                                 <button>Sign Out</button>
                             </a>
-                            <br/>
-                            <div className='navBG'>
-                                <h3 className='Nav'>
-                                    <Link to='/welcome'> Home </Link>
-                                    <Link to='/houses'> Houses </Link>
-                                    <Link to='/myhouse/:houseid'> My House </Link>
-                                    <Link to='/myprofile'> My Profile </Link>
-                                </h3>
+                            <h1 className='gryffindor'>Gryffindor</h1>
+                            <div className='navholder'>
+                                <nav className='navgryffin'>
+                                    <p className='homelink'>
+                                        <Link to='/welcome'> Home </Link>
+                                    </p>
+                                    <p className='houseslink'>
+                                        <Link to='/houses'> Houses </Link>
+                                    </p>
+                                    <p className='myhouselink'>
+                                        <Link to='/myhouse/:houseid'> My House </Link>
+                                    </p>
+                                    <p className='profilelink'>
+                                        <Link to='/myprofile'> My Profile </Link>
+                                    </p>
+                                </nav>
                             </div>
-                            <br/>
-                            Gryffindor Students
-                            {studentList}
+                            <div className='studenthousepointsgryffin'>
+                                <p className='housepointsgryffin'>
+                                    House Points: {this.state.points}
+                                </p>
+                            </div>
+                            <div className='studentgryffinBG'>
+                                <br/>
+                                <br/>
+                                {studentList}
+                            </div>
                         </div>
                         ) : <p>Please sign in</p>
                 }

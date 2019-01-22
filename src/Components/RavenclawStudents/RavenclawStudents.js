@@ -11,6 +11,7 @@ class RavenclawStudents extends Component{
     constructor(props){
         super(props)
         this.state = {
+            points: [],
             students: [],
             quidditch: []
         }
@@ -39,8 +40,17 @@ class RavenclawStudents extends Component{
                 }
               })
             }
-        
+        this.getHousePoints(3)
         this.getStudents(3)
+    }
+
+    getHousePoints = (id) => {
+        axios.get(`/api/housepoints/${id}`).then(res => {
+            console.log(res.data)
+            this.setState({
+                points: res.data[0].points
+            })
+        })
     }
 
     getStudents = (houseId) => {
@@ -64,8 +74,8 @@ class RavenclawStudents extends Component{
                     lastname={student.lastname}
                     year={student.year}
                     houseid={student.houseid}
-                    points={student.points}
-                    picture={student.picture}
+                    points={student.studentpoints}
+                    picture={student.studentpicture}
                     getStudents={() => this.getStudents(student.houseid)}/>
                 </div>
             )
@@ -74,18 +84,37 @@ class RavenclawStudents extends Component{
             <div className='RCBG'>
                 {
                     id ? (
-                        <div>
+                        <div className='pageBG'>
                             <a href='http://localhost:4321/api/signout'>
                                 <button>Sign Out</button>
                             </a>
-                            <br/>
-                            <Link to='/welcome'> Home </Link>
-                            <Link to='/houses'> Houses </Link>
-                            <Link to='/myhouse/:houseid'> My House </Link>
-                            <Link to='/myprofile'> My Profile </Link>
-                            <br/>
-                            Ravenclaw Students
-                            {studentList}
+                            <h1 className='ravenclaw'>Ravenclaw</h1>
+                            <div className='navholder'>
+                                <nav className='navraven'>
+                                    <p className='homelink'>
+                                        <Link to='/welcome'> Home </Link>
+                                    </p>
+                                    <p className='houseslink'>
+                                        <Link to='/houses'> Houses </Link>
+                                    </p>
+                                    <p className='myhouselink'>
+                                        <Link to='/myhouse/:houseid'> My House </Link>
+                                    </p>
+                                    <p className='profilelink'>
+                                        <Link to='/myprofile'> My Profile </Link>
+                                    </p>
+                                </nav>
+                            </div>
+                            <div className='studenthousepointsgryffin'>
+                                <p className='housepoints'>
+                                    House Points: {this.state.points}
+                                </p>
+                            </div>
+                            <div className='studentravenBG'>
+                                <br/>
+                                <br/>
+                                {studentList}
+                            </div>
                         </div>
                         ) : <p>Please sign in</p>
                 }

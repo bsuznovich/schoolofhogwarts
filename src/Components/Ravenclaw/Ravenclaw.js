@@ -37,6 +37,16 @@ class Ravenclaw extends Component{
             }
           })
         }
+        this.getHousePoints(3)
+    }
+
+    getHousePoints = (id) => {
+        axios.get(`/api/housepoints/${id}`).then(res => {
+            console.log(res.data)
+            this.setState({
+                points: res.data[0].points
+            })
+        })
     }
 
     render(){
@@ -70,7 +80,7 @@ class Ravenclaw extends Component{
                             <div className='studenthousepoints'>
                                     <Link to='/ravenclaw/students'><button className='studentbtnraven'>Students</button></Link>
                                 <p className='housepoints'>
-                                    House Points: 
+                                    House Points: {this.state.points}
                                 </p>
                             </div>
                             <div className='ravenbody'>

@@ -1,0 +1,30 @@
+$raven: #0e1a40;
+$gryffin: #740001;
+$huffle: #ecb939;
+$slyther: #1a472a;
+
+@font-face {
+    font-family: 'magic';
+    src: url('MagicSchoolOne.ttf')
+}
+
+@font-face {
+    font-family: 'dumbledore';
+    src: url('dum1.ttf')
+}
+
+@font-face {
+    font-family: 'potter';
+    src: url('potter.ttf')
+}
+
+.studentBG {
+    background-color: $gryffin;
+    border: 1px solid black;
+    width: 100vw;
+    height: 100vh;
+}
+
+.student {
+    
+}

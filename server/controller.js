@@ -199,7 +199,21 @@ module.exports = {
         req.session.user.studentpoints = studentpoints
         // console.log(newName)
         res.status(200).send({message: 'updated', userData: {...req.session.user, newName}})
-        console.log(req.session.user)
-        console.log(req.body)
+    },
+
+    getHousePoints: (req,res) => {
+        const {id} = req.params
+        const db = req.app.get('db')
+        db.get_points({id}).then(response => {
+            res.status(200).send(response)
+        }).catch(err => console.log(err))
+    },
+    
+    addPoints: async (req,res) => {
+        const {houseid, id} = req.params
+        const db = req.app.get('db')
+        let housePoints = await db.add_points({houseid,id})
+        console.log(housePoints)
+        res.status(200).send(housePoints)
     }
 }

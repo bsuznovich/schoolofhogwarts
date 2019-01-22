@@ -3,11 +3,11 @@ import React from 'react'
 
 export default function Students(props){
     return(
-        <div>
-            <img src={props.picture} alt=''/>
-            <p>Name: {props.firstname} {props.lastname}</p>
-            <p>Year: {props.year}</p>
-            <p>Points: {props.points}</p>
-        </div>
+            <div className='student'>
+                <img src={props.picture} alt='' className='studentimg'/>
+                <p className='studenttext'>Name: {props.firstname} {props.lastname}</p>
+                <p className='studenttext'>Year: {props.year}</p>
+                <p className='studenttext'>Points: {props.points}</p>
+            </div>
     )
 }
