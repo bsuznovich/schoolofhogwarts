@@ -146,6 +146,7 @@ module.exports = {
         const {email, password} = req.body
         const db = req.app.get('db')
         const studentArr = await db.find_student({email: email})
+        console.log(studentArr[0])
         if(!studentArr[0]){
             return res.status(200).send({message: 'Email not found'})
         }
@@ -154,6 +155,7 @@ module.exports = {
             return res.status(401).send({message: 'Incorrect password'})
         }
         req.session.user = {id: studentArr[0].id, email: studentArr[0].email, houseid: studentArr[0].houseid}
+        console.log(req.session.user)
         res.status(200).send({message: 'Signed in', userData: {...req.session.user}, signedIn: true})
     },
 
@@ -161,6 +163,7 @@ module.exports = {
         // console.log(req.session)
         if(req.session.user){
             const db = req.app.get('db')
+            console.log(req.session.user)
             db.get_user_data({id: req.session.user.id}).then(response => {
                 res.status(200).send(response[0])
             }).catch(err => console.log(err))

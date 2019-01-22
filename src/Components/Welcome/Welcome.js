@@ -11,6 +11,7 @@ class Welcome extends Component{
     async componentDidMount(){
         try {
           const res = await axios.get(`/api/user-data`)
+          console.log(res)
           this.props.getUserData(res.data)
         } catch(err){
           console.log('Error: Not signed in' , err)
