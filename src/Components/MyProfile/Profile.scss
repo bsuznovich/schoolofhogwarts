@@ -1,0 +1,59 @@
+$raven: #0e1a40;
+$gryffin: #740001;
+$huffle: #ecb939;
+$slyther: #1a472a;
+
+
+
+.profilebody {
+    background-color: aliceblue;
+    border: 1px solid black;
+    margin-top: -73px;
+    border-radius: 5px;
+    z-index: 5;
+    margin-bottom: 20px;
+}
+
+.profilepic {
+    height: 45vh;
+    width: 30vw;
+    border-radius: 50%;
+    border: 1px solid #eeba30;
+}
+
+.editsavebtn {
+    height: 1.5em;
+    width: 3em;
+    font-size: 1em;
+    font-family: 'dumbledore';
+    background-color: $gryffin;
+    color: #eeba30;
+    border: 1px solid #eeba30;
+}
+
+.profiletext {
+    font-size: 2em;
+    font-family: 'dumbledore';
+    color: #eeba30;
+}
+
+.inputs {
+    height: 2em;
+    width: 40%;
+    font-size: 1em;
+    font-family: 'dumbledore';
+    background-color: #5d5d5d;
+    color: #eeba30;
+    border: 1px solid #eeba30;
+}
+
+.pointinput {
+    height: 2em;
+    width: 40%;
+    font-size: 1em;
+    font-family: 'dumbledore';
+    margin-bottom: 5em;
+    background-color: #5d5d5d;
+    color: #eeba30;
+    border: 1px solid #eeba30;
+}

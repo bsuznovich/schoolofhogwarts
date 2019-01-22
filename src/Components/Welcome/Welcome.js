@@ -144,7 +144,7 @@ class Welcome extends Component{
             </div>
             <div className='navholder'>
                 <nav>
-                    <p className='houseslink'>
+                    <p className='homelink'>
                         <Link to='/houses'> Houses </Link>
                     </p>
                     <p className='myhouselink'>

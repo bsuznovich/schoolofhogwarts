@@ -24,7 +24,7 @@ module.exports = {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
         let newStudentArr = await db.create_student({email: email, hash: hash, firstname: firstname, lastname: lastname})
-        req.session.user = {id: newStudentArr[0].id, email: newStudentArr[0].email, houseid: null, firstname: newStudentArr[0].firstname, lastname: newStudentArr[0].lastname, year: '1', points: '0'}
+        req.session.user = {id: newStudentArr[0].id, email: newStudentArr[0].email, houseid: null, firstname: newStudentArr[0].firstname, lastname: newStudentArr[0].lastname, year: '1', studentpoints: '0', housepoints: 0}
         res.status(200).send({message: 'Signed in', userData: {...req.session.user}, signedIn: true})
 
         console.log(req.body)
@@ -158,7 +158,7 @@ module.exports = {
     },
 
     userData: async (req,res) => {
-        console.log(req.session)
+        // console.log(req.session)
         if(req.session.user){
             const db = req.app.get('db')
             db.get_user_data({id: req.session.user.id}).then(response => {
@@ -210,10 +210,10 @@ module.exports = {
     },
     
     addPoints: async (req,res) => {
-        const {houseid, id} = req.params
+        const {houseid} = req.session.user
         const db = req.app.get('db')
-        let housePoints = await db.add_points({houseid,id})
-        console.log(housePoints)
-        res.status(200).send(housePoints)
+        let points = await db.add_points({houseid})
+        req.session.user.points = points[0].points
+        res.status(200).send({message: 'updated', userData: {...req.session.user}})
     }
 }
