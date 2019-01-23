@@ -163,7 +163,7 @@ module.exports = {
         // console.log(req.session)
         if(req.session.user){
             const db = req.app.get('db')
-            console.log(req.session.user)
+            // console.log(req.session.user)
             db.get_user_data({id: req.session.user.id}).then(response => {
                 res.status(200).send(response[0])
             }).catch(err => console.log(err))
@@ -228,5 +228,14 @@ module.exports = {
             req.session.destroy()
             res.redirect(`http://localhost:3000/#/`)
         }).catch(err => console.log(err))
+    },
+
+    addPicture: async (req,res) => {
+        const {studentpicture} = req.body
+        const db = req.app.get('db')
+        const {email} = req.session.user
+        let pic = await db.add_picture({studentpicture, email})
+        req.session.user.studentpicture = pic
+        res.status(200).send({message: 'updated', userData: {...req.session.user}})
     }
 }

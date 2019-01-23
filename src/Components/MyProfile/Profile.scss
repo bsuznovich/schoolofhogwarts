@@ -21,6 +21,10 @@ $slyther: #1a472a;
     border: 1px solid #eeba30;
 }
 
+.addpicture {
+    margin-bottom: 40px;
+}
+
 .editsavebtn {
     height: 1.5em;
     width: 3em;
@@ -54,6 +58,16 @@ $slyther: #1a472a;
     font-family: 'dumbledore';
     margin-bottom: 5em;
     background-color: #5d5d5d;
+    color: #eeba30;
+    border: 1px solid #eeba30;
+}
+
+.deletebutton {
+    height: 1.5em;
+    width: 7em;
+    font-size: 1em;
+    font-family: 'dumbledore';
+    background-color: $gryffin;
     color: #eeba30;
     border: 1px solid #eeba30;
 }

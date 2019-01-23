@@ -141,7 +141,7 @@ class Welcome extends Component{
             </a>
             <h1 className='welcome'>Welcome to Hogwarts school of 
             <br/>
-            witchcraft and wizardry</h1>
+            Witchcraft and Wizardry</h1>
             </div>
             <div className='navholder'>
                 <nav>
@@ -185,18 +185,18 @@ class Welcome extends Component{
                             </a>
                             <h1 className='welcome'>Welcome to Hogwarts school of 
                             <br/>
-                            witchcraft and wizardry</h1>
+                            Witchcraft and Wizardry</h1>
                             </div>
                             <div className='navholder'>
                                 <nav>
-                                    <p className='houseslink'>
-                                        <Link to='/houses'> Houses </Link>
+                                    <p>
+                                        <Link className='homelink' to='/houses' style={{ textDecoration: 'none', color: '#ecb939' }}> Houses </Link>
                                     </p>
-                                    <p className='myhouselink'>
-                                        <Link to='/myhouse/:houseid'> My House </Link>
+                                    <p>
+                                        <Link className='myhouselink' to='/myhouse/:houseid' style={{ textDecoration: 'none', color: '#ecb939' }}> My House </Link>
                                     </p>
-                                    <p className='profilelink'>
-                                        <Link to='/myprofile'> My Profile </Link>
+                                    <p>
+                                        <Link className='profilelink' to='/myprofile' style={{ textDecoration: 'none', color: '#ecb939' }}> My Profile </Link>
                                     </p>
                                 </nav>
                             </div>

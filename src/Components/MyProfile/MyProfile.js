@@ -13,7 +13,8 @@ class MyProfile extends Component {
             housepoints: [],
             myInfo: {},
             editInput: '',
-            editToggle: true
+            editToggle: true,
+            file: null
         }
     }
 
@@ -83,6 +84,25 @@ class MyProfile extends Component {
         })
     }
 
+    submitFile = (event) => {
+        event.preventDefault()
+        const formData = new FormData()
+        formData.append('file', this.state.file[0])
+        axios.post(`/api/upload`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        }).then(response => {
+            axios.post('/api/picture', {studentpicture: response.data.Location})
+        })
+    }
+
+    handleFileUpload = (event) => {
+        this.setState({
+            file: event.target.files
+        })
+    }
+
     render() {
         console.log(this.props)
         // const { id } = this.props.user
@@ -132,20 +152,24 @@ class MyProfile extends Component {
                             : 'nav'
                         }>
                             <p>
-                                <Link className='homelink' to='/welcome' style={{ textDecoration: 'none', color: '#726255' }}> Home </Link>
+                                <Link className='homelink' to='/welcome' style={{ textDecoration: 'none', color: '#0e1a40' }}> Home </Link>
                             </p>
                             <p>
-                                <Link className='houseslink' to='/houses' style={{ textDecoration: 'none', color: '#726255' }}> Houses </Link>
+                                <Link className='houseslink' to='/houses' style={{ textDecoration: 'none', color: '#0e1a40' }}> Houses </Link>
                             </p>
                             <p>
-                                <Link className='myhouselink' to='/myhouse/:houseid' style={{ textDecoration: 'none', color: '#726255' }}> My House </Link>
+                                <Link className='myhouselink' to='/myhouse/:houseid' style={{ textDecoration: 'none', color: '#0e1a40' }}> My House </Link>
                             </p>
                             <p>
-                            <Link className='profilelink' to='/myprofile' style={{ textDecoration: 'none', color: '#726255' }}> My Profile </Link>
+                            <Link className='profilelink' to='/myprofile' style={{ textDecoration: 'none', color: '#0e1a40' }}> My Profile </Link>
                             </p>
                         </nav>
                     </div>
                         {housepoints}
+                        <form className='addpicture' onSubmit={this.submitFile}>
+                            <input label='upload file' type='file' onChange={this.handleFileUpload} />
+                            <button type='submit'>Send</button>
+                        </form>
                     <div className={this.props.user.houseid === 1 ? 'studentgryffinBG' 
                         : this.props.user.houseid === 2 ? 'studenthuffleBG'
                         : this.props.user.houseid === 3 ? 'studentravenBG'
@@ -179,9 +203,12 @@ class MyProfile extends Component {
                                     <input className='pointinput' value={this.props.user.studentpoints} name='studentpoints' onChange={({target}) => this.props.updateUserInfo(target.value, target.name)}/>
                                 </>
                             )}
+                            <br/>
                             <Link to='/'>
-                                <button onClick={() => this.deleteProfile()}>Delete profile</button>
+                                <button className='deletebutton' onClick={() => this.deleteProfile()}>Delete profile</button>
                             </Link>
+                            <br/>
+                            <br/>
                     </div>
                 </div>
             </div>
