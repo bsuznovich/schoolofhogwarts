@@ -218,5 +218,15 @@ module.exports = {
         let points = await db.add_points({houseid})
         req.session.user.points = points[0].points
         res.status(200).send({message: 'updated', userData: {...req.session.user}})
+    },
+
+    deleteProfile: (req,res) => {
+        const db = req.app.get('db')
+        const {email} = req.session.user
+        db.delete_profile({email}).then(response => {
+            res.sendStatus(200)
+            req.session.destroy()
+            res.redirect(`http://localhost:3000/#/`)
+        }).catch(err => console.log(err))
     }
 }

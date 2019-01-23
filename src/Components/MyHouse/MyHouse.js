@@ -27,7 +27,7 @@ class MyHouse extends Component{
             text: "Log in to see page",
             type: 'error',
             showCancelButton: false,
-            confirmButtonColor: '#3085d6',
+            confirmButtonColor: '#740001',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Go back'
           }).then((result) => {

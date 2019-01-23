@@ -16,6 +16,7 @@ export default class Enroll extends Component{
     async enroll() {
         const {email, password, firstName, lastName} = this.state
         const res = await axios.post(`/api/enroll`, {email: email, password: password, firstname: firstName, lastname: lastName})
+        console.log(res)
         if(res.data.signedIn){
             this.props.history.push('/welcome')
         }

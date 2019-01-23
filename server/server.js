@@ -22,16 +22,16 @@ massive(CONNECTION_STRING).then((db) => {
     })
 })
 
-app.use(async (req, res, next) => {
-    if(ENVIRONMENT === 'dev'){
-        const db = req.app.get('db')
-        const userData = await db.set_data()
-        req.session.user = userData[0]
-        next()
-    }else{
-        next()
-    }
-})
+// app.use(async (req, res, next) => {
+//     if(ENVIRONMENT === 'dev'){
+//         const db = req.app.get('db')
+//         const userData = await db.set_data()
+//         req.session.user = userData[0]
+//         next()
+//     }else{
+//         next()
+//     }
+// })
 
 app.get(`/api/students/:houseid`, controller.getStudents)
 
@@ -55,3 +55,5 @@ app.put(`/api/userinfo`, controller.updateUserInfo)
 app.get('/api/housepoints/:id', controller.getHousePoints)
 
 app.post('/api/updatepoints', controller.addPoints)
+
+app.delete('/api/delete/:email', controller.deleteProfile)

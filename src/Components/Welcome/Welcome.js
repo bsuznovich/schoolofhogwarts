@@ -22,7 +22,7 @@ class Welcome extends Component{
             text: "Log in to see page",
             type: 'error',
             showCancelButton: false,
-            confirmButtonColor: '#3085d6',
+            confirmButtonColor: '#740001',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Go back'
           }).then((result) => {
@@ -45,7 +45,7 @@ class Welcome extends Component{
                 text: "You have already been assigned to a house",
                 type: 'error',
                 showCancelButton: false,
-                confirmButtonColor: '#3085d6',
+                confirmButtonColor: '#740001',
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Okay'
               }).then((result) => {
@@ -64,7 +64,7 @@ class Welcome extends Component{
                     text: "Congratulations! You have been assigned to Gryffindor!",
                     type: 'success',
                     showCancelButton: false,
-                    confirmButtonColor: '#3085d6',
+                    confirmButtonColor: '#740001',
                     cancelButtonColor: '#d33',
                     confirmButtonText: 'Go to page'
                 }).then((result) => {
@@ -81,7 +81,7 @@ class Welcome extends Component{
                     text: "Congratulations! You have been assigned to Hufflepuff!",
                     type: 'success',
                     showCancelButton: false,
-                    confirmButtonColor: '#3085d6',
+                    confirmButtonColor: '#ecb939',
                     cancelButtonColor: '#d33',
                     confirmButtonText: 'Go to page'
                 }).then((result) => {
@@ -98,7 +98,7 @@ class Welcome extends Component{
                     text: "Congratulations! You have been assigned to Ravenclaw!",
                     type: 'success',
                     showCancelButton: false,
-                    confirmButtonColor: '#3085d6',
+                    confirmButtonColor: '#5d5d5d',
                     cancelButtonColor: '#d33',
                     confirmButtonText: 'Go to page'
                 }).then((result) => {
@@ -115,7 +115,7 @@ class Welcome extends Component{
                     text: "Congratulations! You have been assigned to Slytherin!",
                     type: 'success',
                     showCancelButton: false,
-                    confirmButtonColor: '#3085d6',
+                    confirmButtonColor: '#5d5d5d',
                     cancelButtonColor: '#d33',
                     confirmButtonText: 'Go to page'
                 }).then((result) => {
@@ -145,14 +145,14 @@ class Welcome extends Component{
             </div>
             <div className='navholder'>
                 <nav>
-                    <p className='homelink'>
-                        <Link to='/houses'> Houses </Link>
+                    <p>
+                        <Link className='homelink' to='/houses' style={{ textDecoration: 'none', color: '#ecb939' }}> Houses </Link>
                     </p>
-                    <p className='myhouselink'>
-                        <Link to='/myhouse/:houseid'> My House </Link>
+                    <p>
+                        <Link className='myhouselink' to='/myhouse/:houseid' style={{ textDecoration: 'none', color: '#ecb939' }}> My House </Link>
                     </p>
-                    <p className='profilelink'>
-                        <Link to='/myprofile'> My Profile </Link>
+                    <p>
+                        <Link className='profilelink' to='/myprofile' style={{ textDecoration: 'none', color: '#ecb939' }}> My Profile </Link>
                     </p>
                 </nav>
             </div>
@@ -273,7 +273,7 @@ class Welcome extends Component{
                             </div>
                         </div>
                     ) : <h1>Please sign in</h1> */}
-                }
+                {/* } */}
             </div>
         )
     }

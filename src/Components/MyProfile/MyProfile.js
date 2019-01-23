@@ -30,7 +30,7 @@ class MyProfile extends Component {
                 text: "Log in to see page",
                 type: 'error',
                 showCancelButton: false,
-                confirmButtonColor: '#3085d6',
+                confirmButtonColor: '#740001',
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Go back'
             }).then((result) => {
@@ -73,6 +73,14 @@ class MyProfile extends Component {
             })
         })
         this.getHousePoints(this.props.user.houseid)
+    }
+
+    deleteProfile = (email) => {
+        axios.delete(`/api/delete/${email}`).then(res => {
+            this.setState({
+                myInfo: res.data
+            })
+        })
     }
 
     render() {
@@ -123,17 +131,17 @@ class MyProfile extends Component {
                             : this.props.user.houseid === 4 ? 'navslyther'
                             : 'nav'
                         }>
-                            <p className='homelink'>
-                                <Link to='/welcome'> Home </Link>
+                            <p>
+                                <Link className='homelink' to='/welcome' style={{ textDecoration: 'none', color: '#726255' }}> Home </Link>
                             </p>
-                            <p className='houseslink'>
-                                <Link to='/houses'> Houses </Link>
+                            <p>
+                                <Link className='houseslink' to='/houses' style={{ textDecoration: 'none', color: '#726255' }}> Houses </Link>
                             </p>
-                            <p className='myhouselink'>
-                                <Link to='/myhouse/:houseid'> My House </Link>
+                            <p>
+                                <Link className='myhouselink' to='/myhouse/:houseid' style={{ textDecoration: 'none', color: '#726255' }}> My House </Link>
                             </p>
-                            <p className='profilelink'>
-                            <Link to='/myprofile'> My Profile </Link>
+                            <p>
+                            <Link className='profilelink' to='/myprofile' style={{ textDecoration: 'none', color: '#726255' }}> My Profile </Link>
                             </p>
                         </nav>
                     </div>
@@ -171,6 +179,9 @@ class MyProfile extends Component {
                                     <input className='pointinput' value={this.props.user.studentpoints} name='studentpoints' onChange={({target}) => this.props.updateUserInfo(target.value, target.name)}/>
                                 </>
                             )}
+                            <Link to='/'>
+                                <button onClick={() => this.deleteProfile()}>Delete profile</button>
+                            </Link>
                     </div>
                 </div>
             </div>

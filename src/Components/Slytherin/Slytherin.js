@@ -27,7 +27,7 @@ class Slytherin extends Component{
             text: "Log in to see page",
             type: 'error',
             showCancelButton: false,
-            confirmButtonColor: '#3085d6',
+            confirmButtonColor: '#740001',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Go back'
           }).then((result) => {
@@ -63,17 +63,17 @@ class Slytherin extends Component{
                             <h1 className='slytherin'>Slytherin</h1>
                             <div className='navholder'>
                                 <nav className='navslyther'>
-                                    <p className='homelink'>
-                                        <Link to='/welcome'> Home </Link>
+                                    <p>
+                                        <Link className='homelink' to='/welcome' style={{ textDecoration: 'none', color: '#1a472a' }}> Home </Link>
                                     </p>
-                                    <p className='houseslink'>
-                                        <Link to='/houses'> Houses </Link>
+                                    <p>
+                                        <Link className='houseslink' to='/houses' style={{ textDecoration: 'none', color: '#1a472a' }}> Houses </Link>
                                     </p>
-                                    <p className='myhouselink'>
-                                        <Link to='/myhouse/:houseid'> My House </Link>
+                                    <p>
+                                        <Link className='myhouselink' to='/myhouse/:houseid' style={{ textDecoration: 'none', color: '#1a472a' }}> My House </Link>
                                     </p>
-                                    <p className='profilelink'>
-                                        <Link to='/myprofile'> My Profile </Link>
+                                    <p>
+                                        <Link className='profilelink' to='/myprofile' style={{ textDecoration: 'none', color: '#1a472a' }}> My Profile </Link>
                                     </p>
                                 </nav>
                             </div>

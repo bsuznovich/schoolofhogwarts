@@ -19,11 +19,12 @@ $slyther: #1a472a;
 }
 
 .ravenBG {
-    height: 100vh;
+    height: 100%;
     background-image: url('ravenclaw.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover 
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .ravenclaw {

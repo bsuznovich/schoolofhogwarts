@@ -27,7 +27,7 @@ class Gryffindor extends Component{
             text: "Log in to see page",
             type: 'error',
             showCancelButton: false,
-            confirmButtonColor: '#3085d6',
+            confirmButtonColor: '#740001',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Go back'
           }).then((result) => {
@@ -63,17 +63,17 @@ class Gryffindor extends Component{
                             <h1 className='gryffindor'>Gryffindor</h1>
                             <div className='navholder'>
                                 <nav className='navgryffin'>
-                                    <p className='homelink'>
-                                        <Link to='/welcome'> Home </Link>
+                                    <p>
+                                        <Link className='homelink' to='/welcome' style={{ textDecoration: 'none', color: '#740001' }}> Home </Link>
                                     </p>
-                                    <p className='houseslink'>
-                                        <Link to='/houses'> Houses </Link>
+                                    <p>
+                                        <Link className='houseslink' to='/houses' style={{ textDecoration: 'none', color: '#740001' }}> Houses </Link>
                                     </p>
-                                    <p className='myhouselink'>
-                                        <Link to='/myhouse/:houseid'> My House </Link>
+                                    <p>
+                                        <Link className='myhouselink' to='/myhouse/:houseid' style={{ textDecoration: 'none', color: '#740001' }}> My House </Link>
                                     </p>
-                                    <p className='profilelink'>
-                                        <Link to='/myprofile'> My Profile </Link>
+                                    <p>
+                                        <Link className='profilelink' to='/myprofile' style={{ textDecoration: 'none', color: '#740001' }}> My Profile </Link>
                                     </p>
                                 </nav>
                             </div>

@@ -19,11 +19,12 @@ $slyther: #1a472a;
 }
 
 .GDBG {
-    height: 100vh;
+    height: 100%;
     background-image: url('gryffindor.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover 
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .studenthousepointsgryffin {
@@ -36,8 +37,10 @@ $slyther: #1a472a;
 
 .studentgryffinBG {
     background-color: $gryffin;
-    border: 1px solid black;
+    border: 1px solid #eeba30;
+    border-radius: 5px;
     margin-top: -75px;
+    margin-bottom: 20px;
 }
 
 .student {

@@ -19,11 +19,12 @@ $slyther: #1a472a;
 }
 
 .slytherinBG {
-    height: 100vh;
+    height: 100%;
     background-image: url('slytherin.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover 
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .slytherin {
