@@ -9,7 +9,7 @@ const bluebird = require('bluebird');
 const multiparty = require('multiparty');
 const controller = require('./controller')
 
-const {SERVER_PORT, CONNECTION_STRING, SECRET, NODE_ENV, ENVIRONMENT, ACCESSKEYID, SECRETACCESSKEY} = process.env
+const {SERVER_PORT, CONNECTION_STRING, SECRET, NODE_ENV, ENVIRONMENT, AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY} = process.env
 
 const app = express()
 
@@ -28,8 +28,8 @@ massive(CONNECTION_STRING).then((db) => {
 })
 
 AWS.config.update({
-    accessKeyId: 'AKIAJ73RNUCXCZHD7IVQ',
-    secretAccessKey: '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',
+    accessKeyId: AWS_ACCESS_KEY,
+    secretAccessKey: AWS_SECRET_ACCESS_KEY,
     region: 'us-west-2'
   });
 

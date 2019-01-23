@@ -166,10 +166,6 @@ class MyProfile extends Component {
                         </nav>
                     </div>
                         {housepoints}
-                        <form className='addpicture' onSubmit={this.submitFile}>
-                            <input label='upload file' type='file' onChange={this.handleFileUpload} />
-                            <button type='submit'>Send</button>
-                        </form>
                     <div className={this.props.user.houseid === 1 ? 'studentgryffinBG' 
                         : this.props.user.houseid === 2 ? 'studenthuffleBG'
                         : this.props.user.houseid === 3 ? 'studentravenBG'
@@ -179,6 +175,13 @@ class MyProfile extends Component {
                     <br/>
                     <br/>
                         <img src={this.props.user.studentpicture} alt='' className='profilepic'/>
+                        <br/>
+                        <form className='addpicture' onSubmit={this.submitFile}>
+                            <input label='upload file' type='file' onChange={this.handleFileUpload} />
+                            <button type='submit'>Send</button>
+                        </form>
+                        <br/>
+                        <br/>
                         { this.state.editToggle ? <button className='editsavebtn' onClick={this.toggleEdit}>Edit</button> 
                         :
                         <button className='editsavebtn' onClick={() => this.save()}>Save</button>}
