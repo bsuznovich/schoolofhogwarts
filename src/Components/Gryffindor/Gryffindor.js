@@ -57,9 +57,14 @@ class Gryffindor extends Component{
                 {
                     id ? (
                         <div className='pageBG'>
-                            <a href='http://localhost:4321/api/signout'>
-                                <button>Sign Out</button>
-                            </a>
+                            <div className='signoutholder'>
+                                <Link to='/welcome'>
+                                    <img className='homepic' src='https://i.pinimg.com/originals/59/2c/29/592c29f9c88063dc3870739854ab26e8.jpg' alt='' />
+                                </Link>
+                                <a href='http://localhost:4321/api/signout'>
+                                    <button className='signout'>Sign Out</button>
+                                </a>
+                            </div>
                             <h1 className='gryffindor'>Gryffindor</h1>
                             <div className='navholder'>
                                 <nav className='navgryffin'>
@@ -87,13 +92,14 @@ class Gryffindor extends Component{
                             <br/>
                             <br/>
                                 <p className='raventext'>
-                                Congratulations! I’m Prefect Percy Weasley, and I’m delighted to welcome you to GRYFFINDOR HOUSE. Our emblem is the lion, the bravest of all creatures; our house colours are scarlet and gold, and our common room lies up in Gryffindor Tower.
-                                </p>
+                                    {this.props.user.houseid === 1 ? 'Congratulations! I’m Prefect Hermione Granger, and I’m delighted to welcome you to GRYFFINDOR HOUSE. Our emblem is the lion, the bravest of all creatures; our house colours are scarlet and gold, and our common room lies up in Gryffindor Tower.'
+                                    : 'I’m Prefect Hermione Granger. Our emblem is the lion, the bravest of all creatures; our house colours are scarlet and gold, and our common room lies up in Gryffindor Tower.'}
+                                 </p>
                                 <p className='raventext'>
                                 This is, quite simply, the best house at Hogwarts. It’s where the bravest and boldest end up – for instance: Albus Dumbledore! Yes, Dumbledore himself, the greatest wizard of our time, was a Gryffindor! If that’s not enough for you, I don’t know what is.
                                 </p>
                                 <p className='raventext'>
-                                I won’t keep you long, as all you need to do to find out more about your house is to follow Harry Potter and his friends as I lead them up to their dormitories. Enjoy your time at Hogwarts – but how could you fail to? You’ve become part of the best house in the school.
+                                I won’t keep you long. Enjoy your time at Hogwarts – but how could you fail to? You’ve become part of the best house in the school.
                                 </p>
                             </div>
                         </div>

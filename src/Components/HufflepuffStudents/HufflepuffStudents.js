@@ -86,9 +86,14 @@ class HufflepuffStudents extends Component{
                 {
                     id ? (
                         <div className='pageBG'>
-                            <a href='http://localhost:4321/api/signout'>
-                                <button>Sign Out</button>
-                            </a>
+                            <div className='signoutholder'>
+                                <Link to='/welcome'>
+                                    <img className='homepic' src='https://i.pinimg.com/originals/59/2c/29/592c29f9c88063dc3870739854ab26e8.jpg' alt='' />
+                                </Link>
+                                <a href='http://localhost:4321/api/signout'>
+                                    <button className='signout'>Sign Out</button>
+                                </a>
+                            </div>
                             <h1 className='hufflepuff'>Hufflepuff</h1>
                             <div className='navholder'>
                                 <nav className='navhuffle'>
@@ -114,6 +119,28 @@ class HufflepuffStudents extends Component{
                             <div className='studenthuffleBG'>
                             <br/>
                             <br/>
+                            <h2 className='positionlabel'>Head of House</h2>
+                            <div className='hoh'>
+                                    <img className='hohimg' src='https://cdn.playbuzz.com/cdn/d730727a-02ba-4666-9053-72cae629e882/abac35f7-43fd-4baf-86e7-bcc9955e070b.jpg' alt='' />
+                                    <p className='hohtext' >Name: Pomona Sprout</p>
+                                </div>
+                                <br/>
+                                <h2 className='positionlabel'>Prefect</h2>
+                                <div className='student'>
+                                    <img className='prefectimg' src='	https://vignette.wikia.nocookie.net/harrypotter/images/b/b7/Harry-potter-goblet-of-fire-hannah.jpg/revision/latest?cb=20170731215859' alt=''/>
+                                    <p className='prefecttext'>Name: Hannah Abbott</p>
+                                    <p className='prefecttext'>Year: 5</p>
+                                    <p className='prefecttext'>Points: 40</p>
+                                </div>
+                                <div className='student'>
+                                    <img className='prefectimg' src='https://vignette.wikia.nocookie.net/harrypotter/images/d/de/Ernie_GOF.jpg/revision/latest?cb=20160720043852' alt=''/>
+                                    <p className='prefecttext'>Name: Ernest Macmillan</p>
+                                    <p className='prefecttext'>Year: 5</p>
+                                    <p className='prefecttext'>Points: 30</p>
+                                </div>
+                                <br/>
+                                <br/>
+                                <h2 className='positionlabel'>Students</h2>
                                 {studentList}
                             </div>
                         </div>

@@ -85,9 +85,14 @@ class RavenclawStudents extends Component{
                 {
                     id ? (
                         <div className='pageBG'>
-                            <a href='http://localhost:4321/api/signout'>
-                                <button>Sign Out</button>
-                            </a>
+                            <div className='signoutholder'>
+                                <Link to='/welcome'>
+                                    <img className='homepic' src='https://i.pinimg.com/originals/59/2c/29/592c29f9c88063dc3870739854ab26e8.jpg' alt='' />
+                                </Link>
+                                <a href='http://localhost:4321/api/signout'>
+                                    <button className='signout'>Sign Out</button>
+                                </a>
+                            </div>
                             <h1 className='ravenclaw'>Ravenclaw</h1>
                             <div className='navholder'>
                                 <nav className='navraven'>
@@ -113,6 +118,28 @@ class RavenclawStudents extends Component{
                             <div className='studentravenBG'>
                                 <br/>
                                 <br/>
+                                <h2 className='positionlabel'>Head of House</h2>
+                            <div className='hoh'>
+                                    <img className='hohimg' src='https://i.pinimg.com/originals/a7/7a/ca/a77aca66b90807d42d890aec6f8f78c8.jpg' alt='' />
+                                    <p className='hohtext' >Name: Filius Flitwick</p>
+                                </div>
+                                <br/>
+                                <h2 className='positionlabel'>Prefect</h2>
+                                <div className='student'>
+                                    <img className='prefectimg' src='https://vignette.wikia.nocookie.net/harrypotter/images/e/ef/Padma_patil.PNG/revision/latest?cb=20090723090430' alt=''/>
+                                    <p className='prefecttext'>Name: Padma Patil</p>
+                                    <p className='prefecttext'>Year: 5</p>
+                                    <p className='prefecttext'>Points: 15</p>
+                                </div>
+                                <div className='student'>
+                                    <img className='prefectimg' src='https://cdn6.newsnation.in/images/2014/12/17/364877937-Anthony-Rowling_6.jpg' alt=''/>
+                                    <p className='prefecttext'>Name: Anthony Goldstein</p>
+                                    <p className='prefecttext'>Year: 5</p>
+                                    <p className='prefecttext'>Points: 20</p>
+                                </div>
+                                <br/>
+                                <br/>
+                                <h2 className='positionlabel'>Students</h2>
                                 {studentList}
                             </div>
                         </div>

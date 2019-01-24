@@ -57,9 +57,14 @@ class Ravenclaw extends Component{
                 {
                     id ? (
                         <div className='pageBG'>
-                            <a href='http://localhost:4321/api/signout'>
-                                <button>Sign Out</button>
-                            </a>
+                            <div className='signoutholder'>
+                                <Link to='/welcome'>
+                                    <img className='homepic' src='https://i.pinimg.com/originals/59/2c/29/592c29f9c88063dc3870739854ab26e8.jpg' alt='' />
+                                </Link>
+                                <a href='http://localhost:4321/api/signout'>
+                                    <button className='signout'>Sign Out</button>
+                                </a>
+                            </div>
                             <h1 className='ravenclaw'>Ravenclaw</h1>
                             <div className='navholder'>
                                 <nav className='navraven'>
@@ -87,7 +92,8 @@ class Ravenclaw extends Component{
                             <br/>
                             <br/>
                                 <p className='raventext'>
-                                    Congratulations! I’m Prefect Robert Hilliard, and I’m delighted to welcome you to RAVENCLAW HOUSE. Our emblem is the eagle, which soars where others cannot climb; our house colours are blue and bronze, and our common room is found at the top of Ravenclaw Tower, behind a door with an enchanted knocker. The arched windows set into the walls of our circular common room look down at the school grounds: the lake, the Forbidden Forest, the Quidditch pitch and the Herbology gardens. No other house in the school has such stunning views.
+                                    {this.props.user.houseid === 3 ? 'Congratulations! I’m Prefect Anthony Goldstein, and I’m delighted to welcome you to RAVENCLAW HOUSE. Our emblem is the eagle, which soars where others cannot climb; our house colours are blue and bronze, and our common room is found at the top of Ravenclaw Tower, behind a door with an enchanted knocker. The arched windows set into the walls of our circular common room look down at the school grounds: the lake, the Forbidden Forest, the Quidditch pitch and the Herbology gardens. No other house in the school has such stunning views.'
+                                    : 'I’m Prefect Anthony Goldstein. Our emblem is the eagle, which soars where others cannot climb; our house colours are blue and bronze, and our common room is found at the top of Ravenclaw Tower, behind a door with an enchanted knocker. The arched windows set into the walls of our circular common room look down at the school grounds: the lake, the Forbidden Forest, the Quidditch pitch and the Herbology gardens. No other house in the school has such stunning views.'}
                                 </p>
                                 <p className='raventext'>
                                     Without wishing to boast, this is the house where the cleverest witches and wizards live. Our founder, Rowena Ravenclaw, prized learning above all else – and so do we. Unlike the other houses, who all have concealed entrances to their common rooms, we don’t need one. The door to our common room lies at the top of a tall, winding staircase. It has no handle, but an enchanted bronze knocker in the shape of an eagle. When you rap on the door, this knocker will ask you a question, and if you can answer it correctly, you are allowed in. This simple barrier has kept out everyone but Ravenclaws for nearly a thousand years.

@@ -41,9 +41,14 @@ class Houses extends Component{
                 {
                     id ? (
                         <div className='pageBG'>
-                            <a href='http://localhost:4321/api/signout'>
-                                <button>Sign Out</button>
+                            <div className='signoutholder'>
+                                <Link to='/welcome'>
+                                    <img className='homepic' src='https://i.pinimg.com/originals/59/2c/29/592c29f9c88063dc3870739854ab26e8.jpg' alt='' />
+                                </Link>
+                                <a href='http://localhost:4321/api/signout'>
+                                    <button className='signout'>Sign Out</button>
                                 </a>
+                            </div>
                             <h1 className='school'>School Houses</h1>
                             <div className='navholder'>
                                 <nav>

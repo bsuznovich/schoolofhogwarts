@@ -43,7 +43,14 @@ class MyProfile extends Component {
         }
         this.getHousePoints(this.props.user.houseid)
     }
-    
+
+    // componentDidUpdate(prevProps) {
+    //     if (this.props.user.studentpicture !== prevProps.user.studentpicture) {
+    //       this.fetchData(this.props.user.studentpicture);
+    //     } else if(this.props.user.studentpoints !== prevProps.user.studentpoints){
+    //         this.fetchData(this.props.user.studentpoints)
+    //     }
+    //   }
 
     getHousePoints = async (id) => {
         let res = await axios.get(`/api/housepoints/${id}`)
@@ -140,9 +147,14 @@ class MyProfile extends Component {
                         : this.props.user.houseid === 4 ? "SSBG"
                         : 'welcomebody'}>
                 <div className='pageBG'>
-                    <a href='http://localhost:4321/api/signout'>
-                        <button>Sign Out</button>
-                    </a>
+                <div className='signoutholder'>
+                                <Link to='/welcome'>
+                                    <img className='homepic' src='https://i.pinimg.com/originals/59/2c/29/592c29f9c88063dc3870739854ab26e8.jpg' alt='' />
+                                </Link>
+                                <a href='http://localhost:4321/api/signout'>
+                                    <button className='signout'>Sign Out</button>
+                                </a>
+                            </div>
                     <h1 className='gryffindor'>My Profile</h1>
                     <div className='navholder'>
                         <nav className={this.props.user.houseid === 1 ? 'navgryffin'
@@ -152,16 +164,36 @@ class MyProfile extends Component {
                             : 'nav'
                         }>
                             <p>
-                                <Link className='homelink' to='/welcome' style={{ textDecoration: 'none', color: '#0e1a40' }}> Home </Link>
+                                <Link className='homelink' to='/welcome' style={ this.props.user.houseid === 1 ? { textDecoration: 'none', color: '#740001' }
+                                    : this.props.user.houseid === 2 ? { textDecoration: 'none', color: '#726255' }
+                                    : this.props.user.houseid === 3 ? { textDecoration: 'none', color: '#0e1a40' }
+                                    : this.props.user.houseid === 4 ? { textDecoration: 'none', color: '#1a472a' }
+                                    : { textDecoration: 'none', color: '#eeba30' }
+                                    }> Home </Link>
                             </p>
                             <p>
-                                <Link className='houseslink' to='/houses' style={{ textDecoration: 'none', color: '#0e1a40' }}> Houses </Link>
+                                <Link className='houseslink' to='/houses' style={ this.props.user.houseid === 1 ? { textDecoration: 'none', color: '#740001' }
+                                    : this.props.user.houseid === 2 ? { textDecoration: 'none', color: '#726255' }
+                                    : this.props.user.houseid === 3 ? { textDecoration: 'none', color: '#0e1a40' }
+                                    : this.props.user.houseid === 4 ? { textDecoration: 'none', color: '#1a472a' }
+                                    : { textDecoration: 'none', color: '#eeba30' }
+                                    }> Houses </Link>
                             </p>
                             <p>
-                                <Link className='myhouselink' to='/myhouse/:houseid' style={{ textDecoration: 'none', color: '#0e1a40' }}> My House </Link>
+                                <Link className='myhouselink' to='/myhouse/:houseid' style={ this.props.user.houseid === 1 ? { textDecoration: 'none', color: '#740001' }
+                                    : this.props.user.houseid === 2 ? { textDecoration: 'none', color: '#726255' }
+                                    : this.props.user.houseid === 3 ? { textDecoration: 'none', color: '#0e1a40' }
+                                    : this.props.user.houseid === 4 ? { textDecoration: 'none', color: '#1a472a' }
+                                    : { textDecoration: 'none', color: '#eeba30' }
+                                    }> My House </Link>
                             </p>
                             <p>
-                            <Link className='profilelink' to='/myprofile' style={{ textDecoration: 'none', color: '#0e1a40' }}> My Profile </Link>
+                            <Link className='profilelink' to='/myprofile' style={ this.props.user.houseid === 1 ? { textDecoration: 'none', color: '#740001' }
+                                    : this.props.user.houseid === 2 ? { textDecoration: 'none', color: '#726255' }
+                                    : this.props.user.houseid === 3 ? { textDecoration: 'none', color: '#0e1a40' }
+                                    : this.props.user.houseid === 4 ? { textDecoration: 'none', color: '#1a472a' }
+                                    : { textDecoration: 'none', color: '#eeba30' }
+                                    }> My Profile </Link>
                             </p>
                         </nav>
                     </div>
@@ -178,7 +210,7 @@ class MyProfile extends Component {
                         <br/>
                         <form className='addpicture' onSubmit={this.submitFile}>
                             <input label='upload file' type='file' onChange={this.handleFileUpload} />
-                            <button type='submit'>Send</button>
+                            <button className='addpicture' type='submit'>Send</button>
                         </form>
                         <br/>
                         <br/>

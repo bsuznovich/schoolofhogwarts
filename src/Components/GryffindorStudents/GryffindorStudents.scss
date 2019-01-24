@@ -43,6 +43,47 @@ $slyther: #1a472a;
     margin-bottom: 20px;
 }
 
+.positionlabel {
+    color: #eeba30;
+    font-family: 'dumbledore';
+    font-size: 2em;
+}
+
+.hoh {
+    display: flex;
+    justify-content: center;
+    font-family: 'dumbledore';
+}
+
+.hohimg {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    // margin-right: 9em;
+    border: 1px solid #eeba30;
+}
+
+.hohtext {
+    font-size: 45px;
+    color: #eeba30;
+}
+
+.prefectimg {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #eeba30;
+}
+
+.prefecttext {
+    font-size: 35px;
+    color: #eeba30;
+}
+
 .student {
     display: flex;
     justify-content: space-around;
