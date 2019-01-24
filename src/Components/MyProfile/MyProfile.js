@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { connect } from 'react-redux'
-import { getUserData, updateUserInfo } from '../../ducks/reducer'
+import { getUserData, updateUserInfo, updatePicture } from '../../ducks/reducer'
 import './Profile.scss'
 
 class MyProfile extends Component {
@@ -44,13 +44,18 @@ class MyProfile extends Component {
         this.getHousePoints(this.props.user.houseid)
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (this.props.user.studentpicture !== prevProps.user.studentpicture) {
-    //       this.fetchData(this.props.user.studentpicture);
-    //     } else if(this.props.user.studentpoints !== prevProps.user.studentpoints){
-    //         this.fetchData(this.props.user.studentpoints)
-    //     }
-    //   }
+    componentDidUpdate(prevProps) {
+        if (this.props.user.studentpicture !== prevProps.user.studentpicture) {
+            console.log('picture update hit')
+          this.setState({
+              myInfo: this.props.user
+          });
+        } else if(this.props.user.studentpoints !== prevProps.user.studentpoints){
+            this.setState({
+                myInfo: this.props.user
+            })
+        }
+      }
 
     getHousePoints = async (id) => {
         let res = await axios.get(`/api/housepoints/${id}`)
@@ -67,20 +72,21 @@ class MyProfile extends Component {
         })
     }
 
-    save = () => {
+    save = async () => {
         const {firstname, lastname, year, studentpoints} = this.props.user
+        console.log(this.props.user)
         axios.put('/api/userinfo', {firstname, lastname, year, studentpoints}).then(res => {
             this.setState({
-                myInfo: res.data,
+                // myInfo: res.data,
                 editToggle: true
             })
             axios.post('/api/updatepoints').then(res => {
                 this.setState({
                     myInfo:res.data
                 })
+                this.getHousePoints(this.props.user.houseid)
             })
         })
-        this.getHousePoints(this.props.user.houseid)
     }
 
     deleteProfile = (email) => {
@@ -101,6 +107,7 @@ class MyProfile extends Component {
             }
         }).then(response => {
             axios.post('/api/picture', {studentpicture: response.data.Location})
+                this.props.updatePicture(response.data.Location)
         })
     }
 
@@ -253,4 +260,4 @@ class MyProfile extends Component {
 
 const mapState = (reduxState) => reduxState
 
-export default connect(mapState, { getUserData, updateUserInfo })(MyProfile)
+export default connect(mapState, { getUserData, updateUserInfo, updatePicture })(MyProfile)
