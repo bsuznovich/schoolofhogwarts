@@ -40,7 +40,7 @@ class Houses extends Component{
             <div className='HousesBG'>
                 {
                     id ? (
-                        <div className='pageBG'>
+                        <div className='homepageBG'>
                             <div className='signoutholder'>
                                 <Link to='/welcome'>
                                     <img className='homepic' src='https://i.pinimg.com/originals/59/2c/29/592c29f9c88063dc3870739854ab26e8.jpg' alt='' />

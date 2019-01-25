@@ -25,11 +25,23 @@ $slyther: #1a472a;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    // overflow-y: auto;
+}
+
+.ravensignout {
+    position: relative;
+    z-index: 10;
+    margin-right: 2em;
+    margin-bottom: 40px;
+    border: 1px solid #5d5d5d;
+    background-color: $raven;
+    color: #969494;
 }
 
 .ravenclaw {
     height: 13vh;
-    background-color: rgb(228, 231, 235);
+    background-color: rgba(93, 75, 117, .5);
+    color: rgb(178, 184, 189);
     border: 1px solid black;
     margin-top: -73px;
     padding-top: 10px;
@@ -101,4 +113,24 @@ $slyther: #1a472a;
 
 .raventext {
     font-family: 'potter'
+}
+
+.raveneditsavebtn {
+    height: 1.5em;
+    width: 3em;
+    font-size: 1em;
+    font-family: 'dumbledore';
+    background-color: #5d5d5d;
+    color: $raven;
+    border: 1px solid $raven;
+}
+
+.ravendeletebutton {
+    height: 1.5em;
+    width: 7em;
+    font-size: 1em;
+    font-family: 'dumbledore';
+    background-color: #5d5d5d;
+    color: $raven;
+    border: 1px solid $raven;
 }

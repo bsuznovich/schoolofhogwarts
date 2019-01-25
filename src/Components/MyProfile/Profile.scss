@@ -3,12 +3,24 @@ $gryffin: #740001;
 $huffle: #ecb939;
 $slyther: #1a472a;
 
-
-
-.profilebody {
-    background-color: aliceblue;
+.myprofile {
+    position: relative;
+    color: rgb(178, 184, 189) ;
+    background-color:rgba(43, 37, 35, 0.5);
+    height: 13vh;
     border: 1px solid black;
     margin-top: -73px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 65px;
+    border-radius: 5px;
+    font-family: 'dumbledore';
+}
+
+.profilebody {
+    background-color: #2C1F13;
+    border: 1px solid black;
+    // margin-top: -73px;
     border-radius: 5px;
     z-index: 5;
     margin-bottom: 20px;
@@ -21,14 +33,14 @@ $slyther: #1a472a;
     border: 2px solid #eeba30;
 }
 
-.editsavebtn {
+.profileeditsavebtn {
     height: 1.5em;
     width: 3em;
     font-size: 1em;
     font-family: 'dumbledore';
-    background-color: $gryffin;
-    color: #eeba30;
-    border: 1px solid #eeba30;
+    background-color: #eeba30;
+    color: #2C1F13;
+    border: 1px solid #2C1F13;
 }
 
 .profiletext {
@@ -58,12 +70,12 @@ $slyther: #1a472a;
     border: 1px solid #eeba30;
 }
 
-.deletebutton {
+.profiledeletebutton {
     height: 1.5em;
     width: 7em;
     font-size: 1em;
     font-family: 'dumbledore';
-    background-color: $gryffin;
-    color: #eeba30;
-    border: 1px solid #eeba30;
+    background-color: #eeba30;
+    color: #2C1F13;
+    border: 1px solid #2C1F13;
 }

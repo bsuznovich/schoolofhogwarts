@@ -153,16 +153,24 @@ class MyProfile extends Component {
                         : this.props.user.houseid === 3 ? "RCBG"
                         : this.props.user.houseid === 4 ? "SSBG"
                         : 'welcomebody'}>
-                <div className='pageBG'>
+                <div className='homepageBG'>
                 <div className='signoutholder'>
                                 <Link to='/welcome'>
                                     <img className='homepic' src='https://i.pinimg.com/originals/59/2c/29/592c29f9c88063dc3870739854ab26e8.jpg' alt='' />
                                 </Link>
                                 <a href='http://localhost:4321/api/signout'>
-                                    <button className='signout'>Sign Out</button>
+                                    <button className={this.props.user.houseid === 1 ? 'signout'
+                                    : this.props.user.houseid === 2 ? 'hufflesignout'
+                                    : this.props.user.houseid === 3 ? 'ravensignout'
+                                    : this.props.user.houseid === 4 ? 'slythersignout'
+                                    : 'signout'}>Sign Out</button>
                                 </a>
                             </div>
-                    <h1 className='gryffindor'>My Profile</h1>
+                    <h1 className={this.props.user.houseid === 1 ?'gryffindor'
+                        : this.props.user.houseid === 2 ? 'hufflepuff'
+                        : this.props.user.houseid === 3 ? 'ravenclaw'
+                        : this.props.user.houseid === 4 ? 'slytherin'
+                        : 'myprofile'}>My Profile</h1>
                     <div className='navholder'>
                         <nav className={this.props.user.houseid === 1 ? 'navgryffin'
                             : this.props.user.houseid === 2 ? 'navhuffle'
@@ -221,9 +229,17 @@ class MyProfile extends Component {
                         </form>
                         <br/>
                         <br/>
-                        { this.state.editToggle ? <button className='editsavebtn' onClick={this.toggleEdit}>Edit</button> 
+                        { this.state.editToggle ? <button className={this.props.user.houseid === 1 ? 'editsavebtn'
+                            : this.props.user.houseid === 2 ? 'huffleeditsavebtn'
+                            : this.props.user.houseid === 3 ? 'raveneditsavebtn'
+                            : this.props.user.houseid === 4 ? 'slythereditsavebtn'
+                            : 'profileeditsavebtn'} onClick={this.toggleEdit}>Edit</button> 
                         :
-                        <button className='editsavebtn' onClick={() => this.save()}>Save</button>}
+                        <button className={this.props.user.houseid === 1 ? 'editsavebtn'
+                            : this.props.user.houseid === 2 ? 'huffleeditsavebtn'
+                            : this.props.user.houseid === 3 ? 'raveneditsavebtn'
+                            : this.props.user.houseid === 4 ? 'slythereditsavebtn'
+                            : 'profileeditsavebtn'} onClick={() => this.save()}>Save</button>}
                         {this.state.editToggle ?
                             (
                                 <>
@@ -247,7 +263,11 @@ class MyProfile extends Component {
                             )}
                             <br/>
                             <Link to='/'>
-                                <button className='deletebutton' onClick={() => this.deleteProfile()}>Delete profile</button>
+                                <button className={this.props.user.houseid === 1 ? 'deletebutton'
+                            : this.props.user.houseid === 2 ? 'huffledeletebutton'
+                            : this.props.user.houseid === 3 ? 'ravendeletebutton'
+                            : this.props.user.houseid === 4 ? 'slytherdeletebutton'
+                            : 'profiledeletebutton'} onClick={() => this.deleteProfile()}>Delete profile</button>
                             </Link>
                             <br/>
                             <br/>

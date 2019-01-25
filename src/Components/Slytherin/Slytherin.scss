@@ -25,11 +25,22 @@ $slyther: #1a472a;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    // overflow-y: auto;
+}
+
+.slythersignout {
+    position: relative;
+    z-index: 10;
+    margin-right: 2em;
+    margin-bottom: 40px;
+    border: 1px solid $slyther;
+    background-color: #5d5d5d;
+    color: #c5c5c5;
 }
 
 .slytherin {
     height: 13vh;
-    background-color: rgb(228, 231, 235);
+    background-color: rgba(86, 165, 57, .5);
     border: 1px solid black;
     margin-top: -73px;
     padding-top: 10px;
@@ -80,4 +91,24 @@ $slyther: #1a472a;
     font-family: 'dumbledore';
     font-size: 2.5em;
     margin-top: 10px;
+}
+
+.slythereditsavebtn {
+    height: 1.5em;
+    width: 3em;
+    font-size: 1em;
+    font-family: 'dumbledore';
+    background-color: #5d5d5d;
+    color: $slyther;
+    border: 1px solid $slyther;
+}
+
+.slytherdeletebutton {
+    height: 1.5em;
+    width: 7em;
+    font-size: 1em;
+    font-family: 'dumbledore';
+    background-color: #5d5d5d;
+    color: $slyther;
+    border: 1px solid $slyther;
 }

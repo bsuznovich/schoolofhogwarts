@@ -25,11 +25,22 @@ $slyther: #1a472a;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    // overflow-y: auto;
+}
+
+.hufflesignout {
+    position: relative;
+    z-index: 10;
+    margin-right: 2em;
+    margin-bottom: 40px;
+    border: 1px solid $huffle;
+    background-color: #726255;
+    color: $huffle;
 }
 
 .hufflepuff {
     height: 13vh;
-    background-color: rgb(228, 231, 235);
+    background-color: rgba(139, 101, 38, .5);
     border: 1px solid black;
     margin-top: -73px;
     padding-top: 10px;
@@ -80,4 +91,24 @@ $slyther: #1a472a;
     font-family: 'dumbledore';
     font-size: 2.5em;
     margin-top: 10px;
+}
+
+.huffleeditsavebtn {
+    height: 1.5em;
+    width: 3em;
+    font-size: 1em;
+    font-family: 'dumbledore';
+    background-color: #726255;
+    color: $huffle;
+    border: 1px solid $huffle;
+}
+
+.huffledeletebutton {
+    height: 1.5em;
+    width: 7em;
+    font-size: 1em;
+    font-family: 'dumbledore';
+    background-color: #726255;
+    color: $huffle;
+    border: 1px solid $huffle;
 }

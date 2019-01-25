@@ -3,6 +3,13 @@ $gryffin: #740001;
 $huffle: #ecb939;
 $slyther: #1a472a;
 
+body::-webkit-scrollbar {
+    overflow: scroll;
+    width: 0px;
+    height: 0px;
+    background: transparent;
+}
+
 @font-face {
     font-family: 'magic';
     src: url('MagicSchoolOne.ttf')
@@ -14,11 +21,13 @@ $slyther: #1a472a;
 }
 
 .welcomebody {
-    height: 100vh;
+    height: 100%;
     background-image: url('welcome_background.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover 
+    background-size: cover;
+    background-attachment: fixed;
+    // overflow-y: auto;
 }
 
 .pageBG {
@@ -28,7 +37,7 @@ $slyther: #1a472a;
     background-position: center;
     background-repeat: no-repeat;
     size: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
 .signoutholder {
@@ -62,7 +71,7 @@ $slyther: #1a472a;
 
 .welcome {
     position: relative;
-    color: rgb(178, 184, 189) ;
+    color: rgb(178, 184, 189);
     background-color:rgba(43, 37, 35, 0.5);
     height: 19vh;
     border: 1px solid black;
@@ -124,4 +133,27 @@ nav {
     color: $slyther;
     border: 1px solid black;
     border-radius: 10px;
+}
+
+.housetext {
+    font-family: 'dumbledore';
+    font-size: 5em;
+}
+
+.housebody {
+    background-color: rgba(240, 248, 255, .5);
+    border: 1px solid black;
+    margin-top: -30px;
+    border-radius: 5px;
+    z-index: 5;
+    margin-bottom: 20px;
+}
+
+.nohousebody {
+    background-color: rgba(240, 248, 255, .5);
+    border: 1px solid black;
+    // margin-top: -30px;
+    border-radius: 5px;
+    z-index: 5;
+    margin-bottom: 200px;
 }

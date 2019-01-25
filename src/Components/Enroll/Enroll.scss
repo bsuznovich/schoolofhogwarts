@@ -5,3 +5,14 @@
     background-repeat: no-repeat;
     background-size: cover 
 }
+
+.buttonholder {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btns {
+    height: 2.5em;
+    width: 5.5em;
+    background-color: aqua;
+}

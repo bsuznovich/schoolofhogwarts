@@ -52,24 +52,53 @@ class MyHouse extends Component{
         } else if(id && this.props.user.houseid === 4){
             this.props.history.push('/slytherin')
         } else if(id && !this.props.user.houseid){
-            page = <div>
-                <h1>You do not have a house yet</h1>
-            </div>
+            page = <div className='homepageBG'>
+                            <div className='header'>
+                            <div className='signoutholder'>
+                                <Link to='/welcome'>
+                                    <img className='homepic' src='https://i.pinimg.com/originals/59/2c/29/592c29f9c88063dc3870739854ab26e8.jpg' alt='' />
+                                </Link>
+                                <a href='http://localhost:4321/api/signout'>
+                                    <button className='signout'>Sign Out</button>
+                                </a>
+                            </div>
+                            <h1 className='welcome'>Welcome to Hogwarts school of 
+                            <br/>
+                            Witchcraft and Wizardry</h1>
+                            </div>
+                            <div className='navholder'>
+                                <nav>
+                                    <p>
+                                        <Link className='homelink' to='/welcome' style={{ textDecoration: 'none', color: '#ecb939' }}> Home </Link>
+                                    </p>
+                                    <p>
+                                        <Link className='houseslink' to='/houses' style={{ textDecoration: 'none', color: '#ecb939' }}> Houses </Link>
+                                    </p>
+                                    <p>
+                                        <Link className='myhouselink' to='/myhouse/:houseid' style={{ textDecoration: 'none', color: '#ecb939' }}> My House </Link>
+                                    </p>
+                                    <p>
+                                        <Link className='profilelink' to='/myprofile' style={{ textDecoration: 'none', color: '#ecb939' }}> My Profile </Link>
+                                    </p>
+                                </nav>
+                            </div>
+                            {/* <button className='joinbtn' onClick={() => this.sort()}>Join the Sorting Ceremony</button> */}
+                            <div className='nohousebody'>
+                            <br/>
+                            <br/>
+                                <p className='housetext'>
+                                    Join the Sorting Ceremony to get a house
+                                </p>
+                                
+                            </div>
+                        </div>
         } else if(!id){
             page = <div>
                 <h1>Please sign in</h1>
             </div>
         }
         return(
-            <div>
-                <a href='http://localhost:4321/api/signout'>
-                             <button>Sign Out</button>
-                        </a>
-                        <br/>
-                        <Link to='/welcome'> Home </Link>
-                        <Link to='/houses'> Houses </Link>
-                            Students
-                        <Link to='/myprofile'> My Profile </Link>
+            <div className='welcomebody'>
                 {page}
             </div>
         )

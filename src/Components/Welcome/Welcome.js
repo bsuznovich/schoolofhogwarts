@@ -134,7 +134,7 @@ class Welcome extends Component{
         const {id} = this.props.user
         let welcomepage
         if(id && this.props.user.houseid){
-            welcomepage = <div className='pageBG'>
+            welcomepage = <div className='homepageBG'>
             <div className='header'>
             <div className='signoutholder'>
                 <Link to='/welcome'>
@@ -162,7 +162,7 @@ class Welcome extends Component{
                 </nav>
             </div>
             {/* <button className='joinbtn' onClick={() => this.sort()}>Join the Sorting Ceremony</button> */}
-            <div className='body'>
+            <div className='housebody'>
             <br/>
             <br/>
                 <p className='raventext'>
@@ -183,7 +183,7 @@ class Welcome extends Component{
             </div>
         </div>
         } else if (id && !this.props.user.houseid){
-            welcomepage = <div className='pageBG'>
+            welcomepage = <div className='homepageBG'>
                             <div className='header'>
                             <div className='signoutholder'>
                                 <Link to='/welcome'>
@@ -211,7 +211,7 @@ class Welcome extends Component{
                                 </nav>
                             </div>
                             <button className='joinbtn' onClick={() => this.sort()}>Join the Sorting Ceremony</button>
-                            <div className='body'>
+                            <div className='housebody'>
                             <br/>
                             <br/>
                                 <p className='raventext'>

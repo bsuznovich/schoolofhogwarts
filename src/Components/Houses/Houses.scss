@@ -33,9 +33,9 @@ $slyther: #1a472a;
 }
 
 .school {
-    background-image: url('https://wallimpex.com/data/out/738/hogwarts-crest-wallpaper-10882350.jpg');
     height: 13vh;
-    background-color: rgb(228, 231, 235);
+    background-color:rgba(43, 37, 35, 0.5);
+    color: rgb(178, 184, 189);
     border: 1px solid black;
     margin-top: -73px;
     padding-top: 10px;
@@ -101,7 +101,7 @@ $slyther: #1a472a;
 .descript {
     display: flex;
     justify-content: center;
-    margin-top: -12px
+    margin-top: -12px;
 }
 
 .ravendes {
@@ -109,7 +109,7 @@ $slyther: #1a472a;
     // border: 1px solid black;
     background-color: #946b2d;
     padding-top: 15px;
-    padding-left: 10px;
+    padding-left: 8px;
     padding-right: 10px;
     font-family: 'potter';
 }
@@ -120,7 +120,7 @@ $slyther: #1a472a;
     background-color: #ae0001;
     padding-top: 15px;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 7px;
     font-family: 'potter';
 }
 
@@ -130,7 +130,7 @@ $slyther: #1a472a;
     background-color: $huffle;
     padding-top: 15px;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 7px;
     padding-bottom: 15px;
     font-family: 'potter';
 }
@@ -141,6 +141,6 @@ $slyther: #1a472a;
     background-color: #aaaaaa;
     padding-top: 15px;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 7px;
     font-family: 'potter';
 }

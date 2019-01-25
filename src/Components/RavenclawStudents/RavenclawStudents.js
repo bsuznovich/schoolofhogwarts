@@ -84,13 +84,13 @@ class RavenclawStudents extends Component{
             <div className='RCBG'>
                 {
                     id ? (
-                        <div className='pageBG'>
+                        <div className='homepageBG'>
                             <div className='signoutholder'>
                                 <Link to='/welcome'>
                                     <img className='homepic' src='https://i.pinimg.com/originals/59/2c/29/592c29f9c88063dc3870739854ab26e8.jpg' alt='' />
                                 </Link>
                                 <a href='http://localhost:4321/api/signout'>
-                                    <button className='signout'>Sign Out</button>
+                                    <button className='ravensignout'>Sign Out</button>
                                 </a>
                             </div>
                             <h1 className='ravenclaw'>Ravenclaw</h1>
