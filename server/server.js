@@ -9,7 +9,7 @@ const bluebird = require('bluebird');
 const multiparty = require('multiparty');
 const controller = require('./controller')
 
-const {SERVER_PORT, CONNECTION_STRING, SECRET, NODE_ENV, ENVIRONMENT, AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY} = process.env
+const {SERVER_PORT, CONNECTION_STRING, SECRET, NODE_ENV, ENVIRONMENT, AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY, REACT_APP_LOGIN} = process.env
 
 const app = express()
 
@@ -19,6 +19,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))
+
+app.use(express.static(`${__dirname}/../build`))
 
 massive(CONNECTION_STRING).then((db) => {
     app.set('db', db)
@@ -71,7 +73,7 @@ app.get(`/api/student/:id`, controller.myData)
 
 app.get(`/api/signout`, (req,res) => {
     req.session.destroy()
-    res.redirect(`http://localhost:3000/#/`)
+    res.redirect(REACT_APP_LOGIN)
 })
 
 app.post(`/api/sort`, controller.sort)

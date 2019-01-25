@@ -28,7 +28,7 @@ export default class Enroll extends Component{
             <div className='littlespace'></div>
                 <div className='homepageBG'>
                     <p>Enroll</p>
-                    <form method='POST' action='send'>
+                    <div className='signinsheet' method='POST' action='send'>
                         <span>Email: </span>
                         <input onChange={(e) => this.setState({email: e.target.value})} />
                         <span>Password: </span>
@@ -37,11 +37,11 @@ export default class Enroll extends Component{
                         <input onChange={(e) => this.setState({firstName: e.target.value})} />
                         <span>Last Name: </span>
                         <input onChange={(e) => this.setState({lastName: e.target.value})} />
-                    </form>
+                    </div>
                     <br/>
                     <div className='buttonholder'>
-                        <button className='btns' type='submit' onClick={() => this.enroll()}>Enroll</button>
-                        <button className='btns' onClick={() => this.props.history.push('/')}>Cancel</button>
+                        <button className='enrollbtn' type='submit' onClick={() => this.enroll()}>Enroll</button>
+                        <button className='cancelbtn' onClick={() => this.props.history.push('/')}>Cancel</button>
                     </div>
                 </div>
             </div>

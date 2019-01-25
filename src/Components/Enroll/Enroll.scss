@@ -6,13 +6,27 @@
     background-size: cover 
 }
 
+.signinsheet {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(151, 183, 193, .7);
+}
+
 .buttonholder {
     display: flex;
     justify-content: space-around;
 }
 
-.btns {
+.enrollbtn {
     height: 2.5em;
     width: 5.5em;
+    margin-left: 40em;
+    background-color: aqua;
+}
+
+.cancelbtn {
+    height: 2.5em;
+    width: 5.5em;
+    margin-right: 40em;
     background-color: aqua;
 }
