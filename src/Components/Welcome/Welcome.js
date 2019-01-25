@@ -162,7 +162,7 @@ class Welcome extends Component{
                 </nav>
             </div>
             {/* <button className='joinbtn' onClick={() => this.sort()}>Join the Sorting Ceremony</button> */}
-            <div className='housebody'>
+            <div className='bodybody'>
             <br/>
             <br/>
                 <p className='raventext'>
