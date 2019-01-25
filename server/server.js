@@ -73,7 +73,7 @@ app.get(`/api/student/:id`, controller.myData)
 
 app.get(`/api/signout`, (req,res) => {
     req.session.destroy()
-    res.redirect(REACT_APP_LOGIN)
+    res.redirect('http://www.sortingplace.xyz/#/signin')
 })
 
 app.post(`/api/sort`, controller.sort)
