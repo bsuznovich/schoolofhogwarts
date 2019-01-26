@@ -1,32 +1,95 @@
+$raven: #0e1a40;
+$gryffin: #740001;
+$huffle: #ecb939;
+$slyther: #1a472a;
+
+@font-face {
+    font-family: 'magic';
+    src: url('MagicSchoolOne.ttf')
+}
+
+@font-face {
+    font-family: 'dumbledore';
+    src: url('dum1.ttf')
+}
+
+@font-face {
+    font-family: 'potter';
+    src: url('potter.ttf')
+}
+
 .EBG {
     height: 100vh;
     background-image: url('homepage_background4.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover 
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enrollpageBG {
+    padding-left: 30vw;
+    padding-right: 30vw;
 }
 
 .signinsheet {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding-left: 10vw; 
     background-color: rgba(151, 183, 193, .7);
+    border: 1px solid #e0e0e0;
+    border-radius: 25%;
+}
+
+.enroll {
+    font-family: 'dumbledore';
+    font-size: 3em;
+    margin-left: -2.5em;
+}
+
+.enrollText {
+    margin-right: 10vw;
+    font-family: 'dumbledore';
+    font-size: 1.5em;
+}
+
+.enrollInput {
+    margin-left: -8em;
+    width: 20vw;
+    height: 2vh;
+    border: 1px solid #3C5B6F;
+    border-radius: 25px;
 }
 
 .buttonholder {
     display: flex;
     justify-content: space-around;
+    margin-left: -3.5em;
 }
 
 .enrollbtn {
-    height: 2.5em;
-    width: 5.5em;
-    margin-left: 40em;
-    background-color: aqua;
+    height: 1.5em;
+    width: 3.5em;
+    font-family: 'dumbledore';
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    background-color: #3C5B6F;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 10px;
 }
 
 .cancelbtn {
-    height: 2.5em;
-    width: 5.5em;
-    margin-right: 40em;
-    background-color: aqua;
+    height: 1.5em;
+    width: 3.5em;
+    font-family: 'dumbledore';
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    margin-right: 2em;
+    background-color: #3C5B6F;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
 }
