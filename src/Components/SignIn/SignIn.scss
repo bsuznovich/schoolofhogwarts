@@ -1,7 +1,25 @@
-.SIBG{
+.SIBG {
     height: 100vh;
     background-image: url('homepage_background4.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover 
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signinpageBG {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5vw;
+}
+
+.signinInput {
+    margin-left: -9em;
+    width: 20vw;
+    height: 2vh;
+    border: 1px solid #3C5B6F;
+    border-radius: 25px;
 }

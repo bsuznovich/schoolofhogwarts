@@ -21,18 +21,30 @@ export default class SignIn extends Component{
 
     render(){
         return(
-            <div
-            className='SIBG'>
-                <p>Sign In</p>
-                <div>
-                    <span>Email: </span>
-                    <input onChange={(e) => this.setState({email: e.target.value})}/>
-                    <span>Password: </span>
-                    <input onChange={(e) => this.setState({password: e.target.value})}/>
+            <div className='SIBG'>
+            <div className='littlespace'></div>
+                <div className='signinpageBG'></div>
+                <div className='signinsheet'>
+                    <p className='enroll'>Sign In</p>
+                    <br/>
+                    <span className='enrollText'>Email: </span>
+                    <br/>
+                    <input className='signinInput' onChange={(e) => this.setState({email: e.target.value})}/>
+                    <br/>
+                    <span className='enrollText'>Password: </span>
+                    <br/>
+                    <input className='signinInput' onChange={(e) => this.setState({password: e.target.value})}/>
+                    <br/>
+                    <br/>
+                    <div className='buttonholder'>
+                        <button className='enrollbtn' onClick={() => this.signIn()}>Sign in</button>
+                        <button className='cancelbtn' onClick={() => this.props.history.push('/')}>Cancel</button>
+                        <br/>
+                        <br/>
+                        <br/>
+                    </div>
                 </div>
                 <p>
-                    <button onClick={() => this.signIn()}>Sign in</button>
-                    <button onClick={() => this.props.history.push('/')}>Cancel</button>
                 </p>
             </div>
         )

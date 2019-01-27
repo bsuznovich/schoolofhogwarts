@@ -43,11 +43,14 @@ $slyther: #1a472a;
     background-color: rgba(151, 183, 193, .7);
     border: 1px solid #e0e0e0;
     border-radius: 25%;
+    box-shadow: 3px 3px 10px 2px black;
 }
 
 .enroll {
     font-family: 'dumbledore';
     font-size: 3em;
+    margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: -2.5em;
 }
 
@@ -58,7 +61,7 @@ $slyther: #1a472a;
 }
 
 .enrollInput {
-    margin-left: -8em;
+    margin-left: -8.5em;
     width: 20vw;
     height: 2vh;
     border: 1px solid #3C5B6F;
@@ -80,6 +83,7 @@ $slyther: #1a472a;
     background-color: #3C5B6F;
     border: 1px solid rgb(224, 224, 224);
     border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px black;
 }
 
 .cancelbtn {
@@ -92,4 +96,5 @@ $slyther: #1a472a;
     background-color: #3C5B6F;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px black;
 }
