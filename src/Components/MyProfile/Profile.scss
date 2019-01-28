@@ -1,3 +1,15 @@
+.profileeditsavebtn:hover, .profileeditsavebtn:focus, .profileeditsavebtn:active {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+.profiledeletebutton:hover, .profiledeletebutton:focus, .profiledeletebutton:active {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
 $raven: #0e1a40;
 $gryffin: #740001;
 $huffle: #ecb939;
@@ -41,6 +53,19 @@ $slyther: #1a472a;
     background-color: #eeba30;
     color: #2C1F13;
     border: 1px solid #2C1F13;
+    border-radius: 5px;
+    display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
 }
 
 .profiletext {
@@ -57,6 +82,7 @@ $slyther: #1a472a;
     background-color: #5d5d5d;
     color: #eeba30;
     border: 1px solid #eeba30;
+    border-radius: 25px;
 }
 
 .pointinput {
@@ -78,4 +104,17 @@ $slyther: #1a472a;
     background-color: #eeba30;
     color: #2C1F13;
     border: 1px solid #2C1F13;
+    border-radius: 5px;
+    display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
 }

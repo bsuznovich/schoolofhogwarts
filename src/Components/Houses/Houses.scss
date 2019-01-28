@@ -82,34 +82,7 @@
     transition-timing-function: ease-out;
   }
   .ravenclawbtn:hover, .ravenclawbtn:focus, .ravenclawbtn:active {
-    color: #5d5d5d;
-  }
-  .ravenclawbtn:hover:before, .ravenclawbtn:focus:before, .ravenclawbtn:active:before {
-    -webkit-transform: scale(2);
-    transform: scale(2);
-  }
-
-  .ravenclawbtn:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #0e1a40;
-    border-radius: 100%;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;
-  }
-  .ravenclawbtn:hover, .ravenclawbtn:focus, .ravenclawbtn:active {
-    color: #5d5d5d;
+    color: #946b2d;
   }
   .ravenclawbtn:hover:before, .ravenclawbtn:focus:before, .ravenclawbtn:active:before {
     -webkit-transform: scale(2);
@@ -276,7 +249,7 @@ $slyther: #1a472a;
     border: 1px solid black;
     font-size: 3vh;
     background-color: $raven;
-    color: #5d5d5d;
+    color: $raven;
     font-family: 'dumbledore';
     font-size: 2em;
     display: inline-block;
@@ -289,7 +262,7 @@ $slyther: #1a472a;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   overflow: hidden;
-  background: #e1e1e1;
+  background: #946b2d;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -303,7 +276,7 @@ $slyther: #1a472a;
     margin-left: -25px;
     border: 1px solid black;
     font-size: 3vh;
-    color: #5d5d5d;
+    color: #eeba30;
     background-color: #eeba30;
     font-family: 'dumbledore';
     font-size: 2em;
@@ -317,7 +290,7 @@ $slyther: #1a472a;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   overflow: hidden;
-  background: #e1e1e1;
+  background: $gryffin;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -330,7 +303,7 @@ $slyther: #1a472a;
     margin: -26px;
     border: 1px solid black;
     font-size: 3vh;
-    color: #5d5d5d;
+    color: #726255;
     background-color: #726255;
     font-family: 'dumbledore';
     font-size: 2em;
@@ -344,7 +317,7 @@ $slyther: #1a472a;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   overflow: hidden;
-  background: #e1e1e1;
+  background: #ecb939;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -359,7 +332,7 @@ $slyther: #1a472a;
     border: 1px solid black;
     font-size: 3vh;
     background-color: $slyther;
-    color: #5d5d5d;
+    color: $slyther;
     font-family: 'dumbledore';
     font-size: 2em;
     display: inline-block;
@@ -372,7 +345,7 @@ $slyther: #1a472a;
     -moz-osx-font-smoothing: grayscale;
     position: relative;
     overflow: hidden;
-    background: #e1e1e1;
+    background: #aaaaaa;
     -webkit-transition-property: color;
     transition-property: color;
     -webkit-transition-duration: 0.3s;
@@ -399,7 +372,7 @@ $slyther: #1a472a;
 .gryffindes {
     width: 19.9vw;
     border: 1px solid black;
-    background-color: #ae0001;
+    background-color: #740001;
     padding-top: 15px;
     padding-left: 10px;
     padding-right: 7px;
