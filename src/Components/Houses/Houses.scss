@@ -5,62 +5,197 @@
     }
   
     50% {
-        -webkit-transform: translateY(-4px);
-        transform: translateY(-4px);
-      }
+      -webkit-transform: translateY(-4px);
+      transform: translateY(-4px);
+    }
   
-      100% {
+    100% {
         -webkit-transform: translateY(-8px);
         transform: translateY(-8px);
       }
     }
   
-    @keyframes homelink {
-        0% {
-          -webkit-transform: translateY(-8px);
-          transform: translateY(-8px);
-        }
+  @keyframes homelink {
+    0% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
   
-        50% {
-            -webkit-transform: translateY(-4px);
-            transform: translateY(-4px);
-          }
+    50% {
+      -webkit-transform: translateY(-4px);
+      transform: translateY(-4px);
+    }
   
-          100% {
-            -webkit-transform: translateY(-8px);
-            transform: translateY(-8px);
-          }
-        }
+    100% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+  }
   
-        @-webkit-keyframes homelink-float {
-            100% {
-              -webkit-transform: translateY(-8px);
-              transform: translateY(-8px);
-            }
-          }
+  @-webkit-keyframes homelink-float {
+    100% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+  }
   
-          @keyframes homelink-float {
-            100% {
-              -webkit-transform: translateY(-8px);
-              transform: translateY(-8px);
-            }
-          }
-          .homelink:hover, .homelink:focus, .homelink:active {
-            -webkit-animation-name: homelink-float, homelink;
-            animation-name: homelink-float, homelink;
-            -webkit-animation-duration: .3s, 1.5s;
-            animation-duration: .3s, 1.5s;
-            -webkit-animation-delay: 0s, .3s;
-            animation-delay: 0s, .3s;
-            -webkit-animation-timing-function: ease-out, ease-in-out;
-            animation-timing-function: ease-out, ease-in-out;
-            -webkit-animation-iteration-count: 1, infinite;
-            animation-iteration-count: 1, infinite;
-            -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-            -webkit-animation-direction: normal, alternate;
-            animation-direction: normal, alternate;
-          }
+  @keyframes homelink-float {
+    100% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+  }
+  .homelink:hover, .homelink:focus, .homelink:active {
+    -webkit-animation-name: homelink-float, homelink;
+    animation-name: homelink-float, homelink;
+    -webkit-animation-duration: .3s, 1.5s;
+    animation-duration: .3s, 1.5s;
+    -webkit-animation-delay: 0s, .3s;
+    animation-delay: 0s, .3s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+    animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite;
+    animation-iteration-count: 1, infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-direction: normal, alternate;
+    animation-direction: normal, alternate;
+  }
+
+  .ravenclawbtn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #0e1a40;
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .ravenclawbtn:hover, .ravenclawbtn:focus, .ravenclawbtn:active {
+    color: #5d5d5d;
+  }
+  .ravenclawbtn:hover:before, .ravenclawbtn:focus:before, .ravenclawbtn:active:before {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
+
+  .ravenclawbtn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #0e1a40;
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .ravenclawbtn:hover, .ravenclawbtn:focus, .ravenclawbtn:active {
+    color: #5d5d5d;
+  }
+  .ravenclawbtn:hover:before, .ravenclawbtn:focus:before, .ravenclawbtn:active:before {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
+
+  .gryffindorbtn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #eeba30;
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .gryffindorbtn:hover, .gryffindorbtn:focus, .gryffindorbtn:active {
+    color: #740001;
+  }
+  .gryffindorbtn:hover:before, .gryffindorbtn:focus:before, .gryffindorbtn:active:before {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
+
+  .hufflepuffbtn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #726255;
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hufflepuffbtn:hover, .hufflepuffbtn:focus, .hufflepuffbtn:active {
+    color: #ecb939;
+  }
+  .hufflepuffbtn:hover:before, .hufflepuffbtn:focus:before, .hufflepuffbtn:active:before {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
+
+  .slytherinbtn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #1a472a;
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .slytherinbtn:hover, .slytherinbtn:focus, .slytherinbtn:active {
+    color: #5d5d5d;
+  }
+  .slytherinbtn:hover:before, .slytherinbtn:focus:before, .slytherinbtn:active:before {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
 
 $raven: #0e1a40;
 $gryffin: #740001;
@@ -91,16 +226,28 @@ $slyther: #1a472a;
 }
 
 .homelink {
-    margin-left: 6vw;
-    font-family: 'dumbledore';
-    font-size: 2.5em;
-    vertical-align: middle;
+        // margin-right: 6vw;
+        font-family: 'dumbledore';
+        font-size: 2.5em;
+        display: inline-block;
+        display: inline-block;
+        vertical-align: middle;
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
         box-shadow: 0 0 1px rgba(0, 0, 0, 0);
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         -moz-osx-font-smoothing: grayscale;
+    margin-left: 6vw;
+    font-family: 'dumbledore';
+    font-size: 2.5em;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .school {
@@ -123,50 +270,113 @@ $slyther: #1a472a;
 
 .ravenclawbtn {
     height: 5vh;
-    width: 20vw;
+    width: 20.1vw;
     margin: -26px;
+    margin-left: -28px;
     border: 1px solid black;
     font-size: 3vh;
     background-color: $raven;
     color: #5d5d5d;
     font-family: 'dumbledore';
     font-size: 2em;
+    display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+  background: #e1e1e1;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
 .gryffindorbtn {
     height: 5vh;
-    width: 20vw;
+    width: 20.1vw;
     margin: -26px;
+    margin-left: -25px;
     border: 1px solid black;
     font-size: 3vh;
-    color: $gryffin;
+    color: #5d5d5d;
     background-color: #eeba30;
     font-family: 'dumbledore';
     font-size: 2em;
+    display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+  background: #e1e1e1;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
 .hufflepuffbtn {
     height: 5vh;
-    width: 20vw;
+    width: 20.1vw;
     margin: -26px;
     border: 1px solid black;
     font-size: 3vh;
-    color: $huffle;
+    color: #5d5d5d;
     background-color: #726255;
     font-family: 'dumbledore';
     font-size: 2em;
+    display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+  background: #e1e1e1;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
 .slytherinbtn {
     height: 5vh;
-    width: 20vw;
+    width: 20.1vw;
     margin: -26px;
+    margin-right: -28px;
     border: 1px solid black;
     font-size: 3vh;
     background-color: $slyther;
     color: #5d5d5d;
     font-family: 'dumbledore';
     font-size: 2em;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    overflow: hidden;
+    background: #e1e1e1;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
 }
 
 .descript {
