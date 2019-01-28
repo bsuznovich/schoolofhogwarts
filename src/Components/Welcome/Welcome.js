@@ -4,6 +4,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import {connect} from 'react-redux'
 import {getUserData} from '../../ducks/reducer'
+import 'sweetalert2/src/sweetalert2.scss'
 import './Welcome.scss'
 
 class Welcome extends Component{
@@ -59,7 +60,7 @@ class Welcome extends Component{
             if(num === gryffindor){
                 let res = await axios.post(`/api/sort`, {email: this.props.user.email, houseid: num})
                 this.props.getUserData(res.data)
-                await Swal({
+                Swal({
                     title: 'Gryffindor',
                     text: "Congratulations! You have been assigned to Gryffindor!",
                     type: 'success',
@@ -76,7 +77,7 @@ class Welcome extends Component{
             } else if (num === hufflepuff){
                 let res = await axios.post(`/api/sort`, {email: this.props.user.email, houseid: num})
                 this.props.getUserData(res.data)
-                await Swal({
+                Swal({
                     title: 'Hufflepuff',
                     text: "Congratulations! You have been assigned to Hufflepuff!",
                     type: 'success',
@@ -93,7 +94,7 @@ class Welcome extends Component{
             } else if (num === ravenclaw){
                 let res = await axios.post(`/api/sort`, {email: this.props.user.email, houseid: num})
                 this.props.getUserData(res.data)                
-                await Swal({
+                Swal({
                     title: 'Ravenclaw',
                     text: "Congratulations! You have been assigned to Ravenclaw!",
                     type: 'success',
@@ -110,7 +111,7 @@ class Welcome extends Component{
             } else if (num === slytherin){
                 let res = await axios.post(`/api/sort`, {email: this.props.user.email, houseid: num})
                 this.props.getUserData(res.data)                
-                await Swal({
+                Swal({
                     title: 'Slytherin',
                     text: "Congratulations! You have been assigned to Slytherin!",
                     type: 'success',
