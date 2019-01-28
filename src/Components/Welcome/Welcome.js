@@ -59,7 +59,7 @@ class Welcome extends Component{
             if(num === gryffindor){
                 let res = await axios.post(`/api/sort`, {email: this.props.user.email, houseid: num})
                 this.props.getUserData(res.data)
-                Swal({
+                await Swal({
                     title: 'Gryffindor',
                     text: "Congratulations! You have been assigned to Gryffindor!",
                     type: 'success',
@@ -70,13 +70,13 @@ class Welcome extends Component{
                 }).then((result) => {
                     console.log(result)
                     if (result.value) {
-                        this.props.history.push('/myhouse/1')
+                        this.props.history.push('/gryffindor')
                     }
                 })
             } else if (num === hufflepuff){
                 let res = await axios.post(`/api/sort`, {email: this.props.user.email, houseid: num})
                 this.props.getUserData(res.data)
-                Swal({
+                await Swal({
                     title: 'Hufflepuff',
                     text: "Congratulations! You have been assigned to Hufflepuff!",
                     type: 'success',
@@ -87,30 +87,30 @@ class Welcome extends Component{
                 }).then((result) => {
                     console.log(result)
                     if (result.value) {
-                        this.props.history.push('/myhouse/2')
+                        this.props.history.push('/hufflepuff')
                     }
                 })
             } else if (num === ravenclaw){
                 let res = await axios.post(`/api/sort`, {email: this.props.user.email, houseid: num})
                 this.props.getUserData(res.data)                
-                Swal({
+                await Swal({
                     title: 'Ravenclaw',
                     text: "Congratulations! You have been assigned to Ravenclaw!",
                     type: 'success',
                     showCancelButton: false,
-                    confirmButtonColor: '#5d5d5d',
+                    confirmButtonColor: '#946b2d',
                     cancelButtonColor: '#d33',
                     confirmButtonText: 'Go to page'
                 }).then((result) => {
                     console.log(result)
                     if (result.value) {
-                        this.props.history.push('/myhouse/3')
+                        this.props.history.push('/ravenclaw')
                     }
                 })
             } else if (num === slytherin){
                 let res = await axios.post(`/api/sort`, {email: this.props.user.email, houseid: num})
                 this.props.getUserData(res.data)                
-                Swal({
+                await Swal({
                     title: 'Slytherin',
                     text: "Congratulations! You have been assigned to Slytherin!",
                     type: 'success',
@@ -121,7 +121,7 @@ class Welcome extends Component{
                 }).then((result) => {
                     console.log(result)
                     if (result.value) {
-                        this.props.history.push('/myhouse/4')
+                        this.props.history.push('/slytherin')
                     }
                 })
             }

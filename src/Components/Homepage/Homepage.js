@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import {Popover, OverlayTrigger} from 'react-bootstrap'
 import './Homepage.scss'
 
 export default class Homepage extends Component{
