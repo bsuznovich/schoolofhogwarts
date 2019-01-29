@@ -258,7 +258,8 @@ class MyProfile extends Component {
                                     <p className='profiletext'>Year: </p>
                                     <input className='inputs' value={this.props.user.year} name='year' onChange={({target}) => this.props.updateUserInfo(target.value, target.name)}/>
                                     <p className='profiletext'>Points: </p>
-                                    <input className='pointinput' value={this.props.user.studentpoints} name='studentpoints' onChange={({target}) => this.props.updateUserInfo(target.value, target.name)}/>
+                                    <input className='inputs' value={this.props.user.studentpoints} name='studentpoints' onChange={({target}) => this.props.updateUserInfo(target.value, target.name)}/>
+                                    <br/>
                                 </>
                             )}
                             <br/>
