@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import './Homepage.scss'
+import axios from 'axios';
 
 export default class Homepage extends Component{
     constructor(props){
@@ -11,6 +12,10 @@ export default class Homepage extends Component{
             firstName: '',
             lastName: ''
         }
+    }
+
+    componentDidMount(){
+        axios.put(`/api/query?name=bloop`)
     }
 
     render(){

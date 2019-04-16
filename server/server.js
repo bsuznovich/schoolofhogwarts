@@ -86,6 +86,10 @@ app.post('/api/updatepoints', controller.addPoints)
 
 app.delete('/api/delete/:email', controller.deleteProfile)
 
+app.put(`/api/query`, (req, res) => {
+  console.log(req.query.name)
+  res.status(200).send({message: req.query.name})})
+
 app.post('/api/upload', (request, response) => {
     const form = new multiparty.Form();
       form.parse(request, async (error, fields, files) => {

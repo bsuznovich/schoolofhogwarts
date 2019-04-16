@@ -9,7 +9,7 @@ const UPDATE_PICTURE = 'UPDATE_PICTURE'
 
 export function getUserData(userInfo){
     return{
-        type: GET_USER_DATA,
+        stype: GET_USER_DATA,
         payload: userInfo
     }
 }
